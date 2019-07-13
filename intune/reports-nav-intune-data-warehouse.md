@@ -8,7 +8,6 @@ ms.author: erikre
 manager: dougeby
 ms.date: 04/10/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,24 +17,24 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7211b5d8840ebc49dc838e8e6f80ec0c73b81a0c
-ms.sourcegitcommit: af2512a1342d8037a96a61c8cc2c63e107913733
+ms.openlocfilehash: c5b903cfa9a6700b8931ccedea0f44a9de0d8011
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
 ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59533536"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67549212"
 ---
-#  <a name="microsoft-intune-data-warehouse-api"></a>Microsoft Intune 資料倉儲 API
+# <a name="microsoft-intune-data-warehouse-api"></a>Microsoft Intune 資料倉儲 API
 
 Intune 資料倉儲 API 可讓您存取電腦可讀格式的 Intune 資料，以用於您慣用的分析工具。 您可以使用 API 來建置報表，以深入了解您的企業行動環境。 API 使用 OData 通訊協定，其遵循下列項目的標準模式：
 
-  -   要求與回應標頭
-  -   狀態碼
-  -   HTTP 方法
-  -   URL 慣例
-  -   媒體類型
-  -   裝載格式
-  -   查詢選項
+  - 要求與回應標頭
+  - 狀態碼
+  - HTTP 方法
+  - URL 慣例
+  - 媒體類型
+  - 裝載格式
+  - 查詢選項
 
 OData (開放式資料通訊協定) 是一種 Organization for the Advancement of Structured Information Standards (OASIS) 標準，可定義用於建置和使用 RESTful API 的最佳做法。 Intune 資料倉儲會使用 OData 版本 4.0。
 
@@ -57,8 +56,8 @@ OData (開放式資料通訊協定) 是一種 Organization for the Advancement o
 
 API 需要使用 Azure AD 進行授權。 Azure AD 使用 OAuth 2.0。 授權之後，您可以使用 HTTP GET 動詞並連絡公開的實體集合，以從 API 取得資料。 如需詳細資料，請參閱：
 
- -  [授權](reports-api-url.md)
- -  [API URL 結構](reports-api-url.md)
+ - [授權](reports-api-url.md)
+ - [API URL 結構](reports-api-url.md)
 
 ## <a name="intune-data-warehouse-data-model"></a>Intune 資料倉儲資料模型
 

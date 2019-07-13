@@ -6,9 +6,8 @@ keywords: Intune 資料倉儲
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/25/2019
+ms.date: 07/08/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50be11f9ada92670c201fc2540499effa5a7edef
-ms.sourcegitcommit: 484a898d54f5386fdbce300225aaa3495cecd6b0
-ms.translationtype: HT
+ms.openlocfilehash: 6d2e6c99d9493d935f4a8f87c6525af19796b5f6
+ms.sourcegitcommit: 1b7ee2164ac9490df4efa83c5479344622c181b5
+ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58798490"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67648789"
 ---
 # <a name="intune-data-warehouse-api-endpoint"></a>Intune 資料倉儲 API 端點
 
@@ -70,8 +69,8 @@ URL 包含下列元素：
 
 `DateKey` 範圍篩選條件可用來針對具有 `dateKey` 作為索引鍵屬性的部分集合，限制要下載的資料量。 `DateKey` 篩選條件可用來藉由提供下列 `$filter` 查詢參數，將服務效能最佳化：
 
-1.  在 `$filter` 中的單獨 `DateKey`，支援 `lt/le/eq/ge/gt` 運算子和使用邏輯運算子 `and` 聯結，可以對應到開始日期和/或結束日期。
-2.  `maxhistorydays` 提供作為自訂查詢選項。<br>
+1. 在 `$filter` 中的單獨 `DateKey`，支援 `lt/le/eq/ge/gt` 運算子和使用邏輯運算子 `and` 聯結，可以對應到開始日期和/或結束日期。
+2. `maxhistorydays` 提供作為自訂查詢選項。<br>
 
 ## <a name="filter-examples"></a>篩選條件範例
 

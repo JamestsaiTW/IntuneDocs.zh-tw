@@ -8,7 +8,6 @@ ms.author: dougeby
 manager: dougeby
 ms.date: 01/01/2018
 ms.topic: archived
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,16 +17,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5edcfedcd03492d8634549147b70be14ffb742e
-ms.sourcegitcommit: 484a898d54f5386fdbce300225aaa3495cecd6b0
+ms.openlocfilehash: eade2a1bc19e4b0c477faf2ad8e262196da8cc30
+ms.sourcegitcommit: ede86a3cb094c12e3e218b956abb9935bec76902
 ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58798870"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67572524"
 ---
 # <a name="help-protect-windows-pcs-using-windows-firewall-policies-in-microsoft-intune"></a>在 Microsoft Intune 中使用 Windows 防火牆原則協助保護 Windows 電腦
 
 [!INCLUDE [classic-portal](includes/classic-portal.md)]
+
+> [!NOTE]
+> 本主題中的資訊僅適用於使用 Intune 軟體用戶端作為電腦所管理的 Windows 桌上型電腦。 如果您想要管理 Windows 電腦的防火牆設定註冊為行動裝置，請參閱 <<c0> [ 在 Intune 中新增 endpoint protection 設定](endpoint-protection-configure.md)。
 
 Microsoft Intune 有數種方式可協助您保護使用 Intune 用戶端管理的 Windows 電腦。 其中一項方式為提供可讓您在電腦上設定 Windows 防火牆設定的原則。
 
@@ -41,23 +43,23 @@ Windows 防火牆原則可讓您建立及部署在受管理電腦上控制 Windo
 > [!NOTE]
 > 如果設定以 Microsoft Intune 原則及群組原則管理同一台電腦的相同設定，群組原則設定會覆寫 Microsoft Intune 原則設定。 如需如何避免 Intune 原則與群組原則產生衝突的詳細資訊，請參閱[解決 GPO 和 Microsoft Intune 原則衝突](resolve-gpo-and-microsoft-intune-policy-conflicts.md)。
 >
-> 如果您想將 Windows 防火牆設定部署到執行 Windows Vista 的電腦，則必須先在這些電腦上安裝 [Hotfix KB971800](http://support2.microsoft.com/kb/971800)。
+> 如果您想要將 Windows 防火牆設定部署到執行 Windows Vista 的電腦，則必須先在這些電腦上安裝 [Hotfix KB971800](http://support2.microsoft.com/kb/971800)。
 
 > [!IMPORTANT]
 > 若要使用 Intune 管理 Windows 防火牆，請確定您所管理的電腦上已啟用下列兩項服務：
 >
-> -   Windows 防火牆
-> -   IPsec 原則代理
+> - Windows 防火牆
+> - IPsec 原則代理
 
 ## <a name="configure-a-windows-firewall-policy"></a>設定 Windows 防火牆原則
 
-1.  在 [Microsoft Intune 管理主控台](https://manage.microsoft.com/) 中，選擇 [原則] &gt; [新增原則]。
+1. 在 [Microsoft Intune 管理主控台](https://manage.microsoft.com/) 中，選擇 [原則]  &gt; [新增原則]  。
 
-2.  設定並部署 **Windows 防火牆設定** 原則。 您可以使用建議的設定或自訂設定。 如需如何建立和部署原則的詳細資訊，請參閱[使用 Microsoft Intune 電腦用戶端的一般 Windows 電腦管理工作](common-windows-pc-management-tasks-with-the-microsoft-intune-computer-client.md)。
+2. 設定並部署 **Windows 防火牆設定** 原則。 您可以使用建議的設定或自訂設定。 如需如何建立和部署原則的詳細資訊，請參閱[使用 Microsoft Intune 電腦用戶端的一般 Windows 電腦管理工作](common-windows-pc-management-tasks-with-the-microsoft-intune-computer-client.md)。
 
     下節列出您可以在原則中設定的值，以及在不自訂原則的情況下將使用的預設值。
 
-部署 Windows 防火牆原則之後，即可在 [原則] 工作區的 [所有原則] 頁面上檢視其狀態。
+部署 Windows 防火牆原則之後，即可在 [原則]  工作區的 [所有原則]  頁面上檢視其狀態。
 
 ## <a name="specify-policy-settings-for-windows-firewall"></a>指定 Windows 防火牆的原則設定
 
@@ -68,7 +70,7 @@ Windows 防火牆原則可讓您建立及部署在受管理電腦上控制 Windo
 - 已連接至私用 (受信任) 的網路 (例如家用網路)
 - 已連接至不受信任的公用網路 (例如咖啡廳)
 
-所有這些設定的預設值都是 [是]，亦即最安全的值。
+所有這些設定的預設值都是 [是]  ，亦即最安全的值。
 
 
 
@@ -79,10 +81,10 @@ Windows 防火牆原則可讓您建立及部署在受管理電腦上控制 Windo
 - 已連接至私用 (受信任) 的網路 (例如家用網路)
 - 已連接至不受信任的公用網路 (例如咖啡廳)
 
-所有這些設定的預設值都是 [是]，亦即最安全的值。
+所有這些設定的預設值都是 [是]  ，亦即最安全的值。
 
 > [!IMPORTANT]
-> 如果您環境中包含執行 Window Vista 但未安裝 Service Pack 的電腦，則您必須安裝與 Miscrosoft 知識庫中[文章 971800](http://go.microsoft.com/fwlink/?LinkId=188405) 的相關更新，或是停用部署到該電腦之原則中的 [封鎖所有連入連線] 原則設定。
+> 如果您環境中所包含的受管理電腦，執行未安裝 Service Pack 的 Windows Vista ，則您必須安裝與 Microsoft 知識庫[文章編號 971800](http://go.microsoft.com/fwlink/?LinkId=188405) 相關聯的更新，或者停用部署至那些電腦之原則中的 **[阻擋所有連入連線]** 原則設定。
 
 ### <a name="notify-the-user-when-windows-firewall-blocks-a-new-program"></a>當 Windows 防火牆阻擋新程式時通知使用者
 
@@ -91,7 +93,7 @@ Windows 防火牆原則可讓您建立及部署在受管理電腦上控制 Windo
 - 已連接至私用 (受信任) 的網路 (例如家用網路)
 - 已連接至不受信任的公用網路 (例如咖啡廳)
 
-所有這些設定的預設值都是 [是]。
+所有這些設定的預設值都是 [是]  。
 
 
 ### <a name="configure-predefined-exceptions"></a>設定預先定義的例外狀況
@@ -138,5 +140,5 @@ Windows 防火牆原則可讓您建立及部署在受管理電腦上控制 Windo
 |**Windows Virtual PC**<br>(Windows 7 或更新版本)|可讓虛擬機器與其他電腦通訊。|
 |**無線可攜式裝置**|可允許使用媒體傳輸通訊協定 (MTP)，將媒體從支援網路存取的相機或媒體裝置傳送到受管理電腦。 這項設定使用 SSDP 和 UPnP 網路通訊協定。|
 
-### <a name="see-also"></a>另請參閱
+### <a name="see-also"></a>請參閱
 [保護 Windows 電腦的原則](policies-to-protect-windows-pcs-in-microsoft-intune.md)

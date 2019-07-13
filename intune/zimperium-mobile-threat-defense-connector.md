@@ -8,7 +8,6 @@ ms.author: brenduns
 manager: dougeby
 ms.date: 12/29/2017
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,18 +17,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5cb4758cefc1a206e8dae32dfa31994814b3f06
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 39c3b606033ca8575e079bef9a627b087a3d3318
+ms.sourcegitcommit: ede86a3cb094c12e3e218b956abb9935bec76902
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61510227"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67572472"
 ---
 # <a name="zimperium-mobile-threat-defense-connector-with-intune"></a>搭配 Intune 使用的 Zimperium Mobile Threat Defense 連接器
 
-您可以根據由 Zimperium (與 Microsoft Intune 整合的 Mobile Threat Defense 解決方案) 所進行的風險評定，使用條件式存取來控制行動裝置對公司資源的存取。 風險是根據從執行 Zimperium 應用程式之裝置所收集的遙測來評定的。
+您可以根據由 Zimperium (與 Microsoft Intune 整合的 Mobile Threat Defense (MTD) 解決方案) 所進行的風險評量，使用條件式存取來控制行動裝置對公司資源的存取。 風險是根據從執行 Zimperium 應用程式之裝置所收集的遙測來評定的。
 
-您可以根據透過 Intune 裝置合規性政策所啟用的 Zimperium 風險評估，來設定條件式存取原則。 風險評估原則可讓您根據偵測到的威脅，允許或封鎖不符合規範的裝置存取公司資源。
+您可以根據透過 Intune 裝置合規性政策所啟用的 Zimperium 風險評量，來設定條件式存取原則。 風險評估原則可讓您根據偵測到的威脅，允許或封鎖不符合規範的裝置存取公司資源。
 
 ## <a name="how-do-intune-and-zimperium-help-protect-your-company-resources"></a>Intune 和 Zimperium 如何協助您保護您的公司資源？
 
@@ -45,11 +44,11 @@ Intune 裝置合規性政策包含以 Zimperium 風險評定為基礎的 Zimperi
 
 在裝置上偵測到惡意應用程式 (例如惡意程式碼) 時，您可以封鎖裝置，直到解決威脅為止︰
 
--   連線到公司電子郵件
+- 連線到公司電子郵件
 
--   使用 OneDrive for Work 應用程式來同步處理公司檔案
+- 使用 OneDrive for Work 應用程式來同步處理公司檔案
 
--   存取公司應用程式
+- 存取公司應用程式
 
 **於偵測到惡意應用程式時進行封鎖：**
 
@@ -61,7 +60,7 @@ Intune 裝置合規性政策包含以 Zimperium 風險評定為基礎的 Zimperi
 
 ### <a name="control-access-based-on-threat-to-network"></a>根據網路威脅來控制存取權
 
-偵測網路中 **中間人攻擊** 等威脅，並根據裝置風險保護對 Wi-Fi 網路的存取。
+偵測網路中的「攔截式攻擊」  等威脅，並根據裝置風險保護對 Wi-Fi 網路的存取。
 
 **封鎖透過 Wi-Fi 的網路存取︰**
 
@@ -73,7 +72,7 @@ Intune 裝置合規性政策包含以 Zimperium 風險評定為基礎的 Zimperi
 
 ### <a name="control-access-to-sharepoint-online-based-on-threat-to-network"></a>根據網路威脅來控制 SharePoint Online 的存取權
 
-偵測網路中 **中間人攻擊** 等威脅，並根據裝置風險防止同步公司檔案。
+偵測網路中的「攔截式攻擊」  等威脅，並根據裝置風險防止對公司檔案進行同步處理。
 
 **偵測到網路威脅時封鎖 SharePoint Online：**
 
@@ -85,19 +84,19 @@ Intune 裝置合規性政策包含以 Zimperium 風險評定為基礎的 Zimperi
 
 ## <a name="supported-platforms"></a>支援的平台
 
--   **Android 4.1 和更新版本**
+- **Android 4.1 和更新版本**
 
--   **iOS 8 和更新版本**
+- **iOS 8 和更新版本**
 
 ## <a name="prerequisites"></a>必要條件
 
--   Azure Active Directory Premium
+- Azure Active Directory Premium
 
--   Microsoft Intune 訂閱
+- Microsoft Intune 訂閱
 
--   Zimperium Mobile Threat Defense 訂用帳戶
+- Zimperium Mobile Threat Defense 訂用帳戶
 
-    -   如需詳細資訊，請參閱 [Zimperium 網站](https://www.zimperium.com/zips-mobile-ips)。
+    - 如需詳細資訊，請參閱 [Zimperium 網站](https://www.zimperium.com/zips-mobile-ips) \(英文\)。
 
 ## <a name="next-steps"></a>後續步驟
 

@@ -5,9 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/29/2019
+ms.date: 06/20/2019
 ms.topic: troubleshooting
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d1f790aeedff1e13ecc220ed7a6d8f311e12585
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 9314617640d0bfd7f3a7b0cd0ba572e99ede53f9
+ms.sourcegitcommit: cd451ac487c7ace18ac9722a28b9facfba41f6d3
 ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57460507"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298405"
 ---
 # <a name="troubleshoot-policies-and-profiles-and-in-intune"></a>針對 Intune 中的原則和設定檔進行疑難排解
 
@@ -31,15 +30,17 @@ Microsoft Intune 包含一些內建的疑難排解功能。 使用這些功能�
 
 本文列出一些常見的疑難排解技術，並描述您可能會遇到的一些問題。
 
+## <a name="check-tenant-status"></a>檢查租用戶狀態
+請檢查[租用戶狀態](tenant-status.md)並確認訂用帳戶為使用中狀態。 您也可以檢視作用中事件可能會影響您的原則] 或 [設定檔部署的摘要報告的詳細資料。
+
 ## <a name="use-built-in-troubleshooting"></a>使用內建的疑難排解
 
-1. 在 [Azure 入口網站](https://portal.azure.com)中，選取 [所有服務] > 篩選 [Intune] > 選取 [Intune]。
-2. 選取 [疑難排解]：
+1. 在 [Intune](https://go.microsoft.com/fwlink/?linkid=2090973) 中，選取 [疑難排解]  ：
 
     ![在 Intune 中，移至 [說明及支援]，然後選取 [疑難排解]](./media/help-and-support-troubleshoot.png)
 
-3. 選擇 [選取使用者] > 選取發生問題的使用者 > [選取]。
-4. 確認 [Intune 授權] 和 [帳戶狀態] 同時顯示綠色核取記號：
+2. 選擇 [選取使用者]  > 選取發生問題的使用者 > [選取]  。
+3. 確認 [Intune 授權]  和 [帳戶狀態]  同時顯示綠色核取記號：
 
     ![在 Intune 中選取使用者，並確認 [帳戶狀態] 和 [Intune 授權] 顯示綠色核取記號狀態](./media/account-status-intune-license-show-green.png)
 
@@ -48,46 +49,46 @@ Microsoft Intune 包含一些內建的疑難排解功能。 使用這些功能�
     - [指派授權，讓使用者可以註冊裝置](licenses-assign.md)
     - [將使用者新增至 Intune](users-add.md)
 
-5. 在 [裝置] 下，尋找有問題的裝置。 檢閱不同欄位：
+4. 在 [裝置]  下，尋找有問題的裝置。 檢閱不同欄位：
 
-    - **受控**：若要讓裝置接收相容性或設定原則，此屬性必須顯示 [MDM] 或 [EAS/MDM]。
+    - **受控**：若要讓裝置接收相容性或設定原則，此屬性必須顯示 [MDM]  或 [EAS/MDM]  。
 
-      - 如果未將 [受控] 設定為 [MDM] 或 [EAS/MDM]，則不會註冊裝置。 在註冊之前，它不會接收合規性或設定原則。
+      - 如果未將 [受控]  設定為 [MDM]  或 [EAS/MDM]  ，則不會註冊裝置。 在註冊之前，它不會接收合規性或設定原則。
 
       - 應用程式防護原則 (行動應用程式管理) 不需要註冊裝置。 如需詳細資訊，請參閱[建立及指派應用程式防護原則](app-protection-policies.md)。
 
-    - **Azure AD 聯結類型**： 應設為**Workplace**或是**AzureAD**。
+    - **Azure AD 聯結類型**：應設定為 [Workplace]  或 [AzureAD]  。
  
-      - 如果此欄位是 [未註冊]，則可能有註冊問題。 一般而言，取消註冊再重新註冊裝置會解決此狀態。
+      - 如果此欄位是 [未註冊]  ，則可能有註冊問題。 一般而言，取消註冊再重新註冊裝置會解決此狀態。
 
-    - **符合 Intune 規範**： 應該**是**。 如果顯示 [否]，則可能有合規性政策問題，或裝置未連線到 Intune 服務。 例如，裝置可能已關機或可能沒有網路連線。 裝置最終會變成不符合規範，可能是 30 天後。
-
-      如需詳細資訊，請參閱[裝置合規性政策入門](device-compliance-get-started.md)。
-
-    - **Azure AD 規範**： 應該**是**。 如果顯示 [否]，則可能有合規性政策問題，或裝置未連線到 Intune 服務。 例如，裝置可能已關機或可能沒有網路連線。 裝置最終會變成不符合規範，可能是 30 天後。
+    - **符合 Intune 規範**：應為 [是]  。 如果顯示 [否]  ，則可能有合規性政策問題，或裝置未連線到 Intune 服務。 例如，裝置可能已關機或可能沒有網路連線。 裝置最終會變成不符合規範，可能是 30 天後。
 
       如需詳細資訊，請參閱[裝置合規性政策入門](device-compliance-get-started.md)。
 
-    - **上次簽入**： 應該是最近的時間和日期。 根據預設，Intune 裝置會每 8 小時檢查一次。
+    - **符合 Azure AD 規範**：應為 [是]  。 如果顯示 [否]  ，則可能有合規性政策問題，或裝置未連線到 Intune 服務。 例如，裝置可能已關機或可能沒有網路連線。 裝置最終會變成不符合規範，可能是 30 天後。
 
-      - 如果 [上次簽入時間] 超過 24 小時，則可能是裝置發生問題。 無法簽入的裝置將無法從 Intune 接收原則。
+      如需詳細資訊，請參閱[裝置合規性政策入門](device-compliance-get-started.md)。
+
+    - **上次簽入**：應為最近的時間和日期。 根據預設，Intune 裝置會每 8 小時檢查一次。
+
+      - 如果 [上次簽入時間]  超過 24 小時，則可能是裝置發生問題。 無法簽入的裝置將無法從 Intune 接收原則。
 
       - 若要強制簽入：
-        - 在 Android 裝置上，開啟公司入口網站應用程式 > [裝置] > 從清單中選擇裝置 > [檢查裝置設定]。
-        - 在 iOS 裝置上，開啟公司入口網站應用程式 > [裝置] > 從清單中選擇裝置 > [檢查設定]。 
-        - 在 Windows 裝置上，開啟 [設定] > [帳戶] > [存取公司或學校資源] > 選取帳戶或 MDM 註冊 > [資訊] > [同步]。
+        - 在 Android 裝置上，開啟公司入口網站應用程式 > [裝置]  > 從清單中選擇裝置 > [檢查裝置設定]  。
+        - 在 iOS 裝置上，開啟公司入口網站應用程式 > [裝置]  > 從清單中選擇裝置 > [檢查設定]  。 
+        - 在 Windows 裝置上，開啟 [設定]   > [帳戶]   > [存取公司或學校資源]  > 選取帳戶或 MDM 註冊 > [資訊]   > [同步]  。
 
     - 選取裝置以查看原則特定資訊。
 
-      [裝置合規性] 顯示指派給裝置的合規性政策狀態。
+      [裝置合規性]  顯示指派給裝置的合規性政策狀態。
 
-      [裝置設定] 顯示指派給裝置的設定原則狀態。
+      [裝置設定]  顯示指派給裝置的設定原則狀態。
 
-      如果 [裝置合規性] 或 [裝置設定] 下未顯示預期的原則，則設為目標的原則不正確。 開啟原則，然後將原則指派給此使用者或裝置。
+      如果 [裝置合規性]  或 [裝置設定]  下未顯示預期的原則，則設為目標的原則不正確。 開啟原則，然後將原則指派給此使用者或裝置。
 
       **原則狀態**：
 
-      - **不適用**： 此原則不支援這個平台上。 例如，iOS 原則不適用於 Android。 Samsung KNOX 原則不適用於 Windows 裝置。
+      - **不適用**：此平台不支援此原則。 例如，iOS 原則不適用於 Android。 Samsung KNOX 原則不適用於 Windows 裝置。
       - **衝突**：裝置上有 Intune 無法覆寫的現有設定。 或者，您使用不同值部署了兩個具有相同設定的原則。
       - **擱置**：裝置尚未簽入 Intune，因此無法取得原則。 或者，裝置已收到原則，但尚未對 Intune 回報狀態。
       - **錯誤**：在[針對公司資源存取問題進行疑難排解](troubleshoot-company-resource-access-problems.md)中查詢錯誤和可能的解決方法。
@@ -99,10 +100,10 @@ Microsoft Intune 包含一些內建的疑難排解功能。 使用這些功能�
 
 ## <a name="youre-unsure-if-a-profile-is-correctly-applied"></a>您不確定設定檔是否已正確套用
 
-1. 在 [Azure 入口網站](https://portal.azure.com)中，選取 [所有服務] > 篩選 [Intune] > 選取 [Intune]。
-2. 選取 [裝置] > [所有裝置] > 選取裝置 > [裝置設定]。 
+1. 登入 [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)。
+2. 選取 [裝置]   > [所有裝置]  > 選取裝置 > [裝置設定]  。 
 
-    每部裝置都會列出其設定檔。 每個設定檔都有 [狀態]。 狀態是將所有指派的設定檔 (包括硬體和 OS 的限制與需求) 全部一起考慮時所達成的情況。 可能的狀態包括：
+    每部裝置都會列出其設定檔。 每個設定檔都有 [狀態]  。 狀態是將所有指派的設定檔 (包括硬體和 OS 的限制與需求) 全部一起考慮時所達成的情況。 可能的狀態包括：
 
     - **符合**：裝置已收到設定檔，並對 Intune 回報其符合設定。
 
@@ -110,10 +111,17 @@ Microsoft Intune 包含一些內建的疑難排解功能。 使用這些功能�
 
     - **擱置**：設定檔已傳送至裝置，但尚未對 Intune 回報狀態。 例如，Android 上的加密需要使用者啟用加密，因此可能顯示為擱置。
 
-**實用連結**:[監視設定裝置設定檔](device-profile-monitor.md)
+**實用的連結**：[監視裝置組態設定檔](device-profile-monitor.md)
 
 > [!NOTE]
 > 當兩個不同限制等級的原則套用至同一部裝置或同一個使用者時，系統會套用較嚴格的原則。
+
+## <a name="policy-troubleshooting-resources"></a>原則疑難排解資源
+
+- [疑難排解 iOS 或 Android 的原則沒有套用至裝置](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-tip-Troubleshooting-iOS-or-Android-policies-not-applying/ba-p/280154)（開啟另一個 Microsoft 網站）
+- [針對 Windows 10 的 Intune 原則失敗進行疑難排解](http://configmgrdogsarchive.com/2018/08/09/troubleshooting-windows-10-intune-policy-failures/)（開啟部落格）
+- [疑難排解適用於 Windows 10 的 CSP 自訂設定](https://support.microsoft.com/en-us/help/4055338/troubleshoot-csp-setting-windows-10-computer-intune)（開啟另一個 Microsoft 網站）
+- [Windows 10 的群組原則與 Intune MDM 原則](https://blogs.technet.microsoft.com/cbernier/2018/04/02/windows-10-group-policy-vs-intune-mdm-policy-who-wins/)（開啟另一個 Microsoft 網站）
 
 ## <a name="alert-saving-of-access-rules-to-exchange-has-failed"></a>警示：將存取規則儲存到 Exchange 失敗
 
@@ -127,11 +135,13 @@ Microsoft Intune 包含一些內建的疑難排解功能。 使用這些功能�
 
 當您使用 MDM 或 EAS 設定安全性原則之後，Windows Phone 裝置不允許降低這些原則的安全性。 例如，您將 [字元密碼字元數下限]  設定為 8 個，然後嘗試減少為 4 個。 此裝置已套用較嚴格的原則。
 
+當您取消指派的原則 （停止部署） 的 Windows 10 裝置不能移除安全性原則。 您可能需要保留原則指派，然後再將安全性設定變更回預設值。
+
 根據裝置平台，如果您想要將原則變更為較不安全的值，您可能需要重設安全性原則。
 
-例如，在 Windows 中的桌面上，從右向內撥動以開啟 [常用鍵] 列。 選擇 [設定] > [控制台] > [使用者帳戶]。 在左側，選取 [重設安全性原則] 連結，然後選擇 [重設原則]。
+例如，在 Windows 8.1 中的桌面上，從右向內撥動以開啟 [常用鍵]  列。 選擇 [設定]   > [控制台]   > [使用者帳戶]  。 在左側，選取 [重設安全性原則]  連結，然後選擇 [重設原則]  。
 
-其他 MDM 裝置 (例如 Android、iOS 和 Windows Phone 8.1) 可能需要先被淘汰，再重新註冊以套用較不嚴格的原則。
+其他平台 (例如 Android、iOS 和 Windows Phone 8.1) 可能需要先被淘汰，再重新註冊以套用較不嚴格的原則。
 
 [裝置註冊疑難排解](troubleshoot-device-enrollment-in-intune.md)可能是不錯的資源。
 
@@ -163,6 +173,9 @@ Microsoft Intune 包含一些內建的疑難排解功能。 使用這些功能�
 
 若要解決這個問題，設定本機系統時間時請盡可能接近網際網路時間。 或者，將它設定為網路上網域控制站的時間。
 
+
 ## <a name="next-steps"></a>後續步驟
 
-如果您仍然需要一些協助，您可以[取得 Microsoft Intune 支援](get-support.md)。
+[有關電子郵件設定檔的常見問題和解決方式](troubleshoot-email-profiles-in-microsoft-intune.md)
+
+取得[來自 Microsoft 的支援說明](get-support.md)或使用[社群論壇](https://social.technet.microsoft.com/Forums/en-US/home?category=microsoftintune)。

@@ -8,7 +8,6 @@ ms.author: erikre
 manager: dougeby
 ms.date: 04/09/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,24 +17,24 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 456abbf849120675b6a7c108ca65c6f9967ae64a
-ms.sourcegitcommit: 601327125ac8ae912d8159422de8aac7dbdc25f6
-ms.translationtype: HT
+ms.openlocfilehash: 5a8d16e058afbedfd1a343560b3727d33776da45
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59429194"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67547879"
 ---
 # <a name="reference-for-mobile-app-management-mam-entities"></a>行動應用程式管理 (MAM) 實體的參考
 
-[行動應用程式管理] 類別包含行動應用程式的實體，例如：
+[行動應用程式管理]  類別包含行動應用程式的實體，例如：
 
-  -  應用程式
-  -  執行個體
-  -  簽入狀態
-  -  健全狀況狀態
-  -  原則狀態
-  -  註冊狀態
-  -  平台類型
+  - 應用程式
+  - 執行個體
+  - 簽入狀態
+  - 健全狀況狀態
+  - 原則狀態
+  - 註冊狀態
+  - 平台類型
 
 ## <a name="mamapplication"></a>MamApplication
 

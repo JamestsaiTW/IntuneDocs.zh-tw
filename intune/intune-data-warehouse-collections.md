@@ -8,7 +8,6 @@ ms.author: erikre
 manager: dougeby
 ms.date: 04/09/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 00a0bd4936d1ad8ba8dd52f1839e7d42505db60e
-ms.sourcegitcommit: 601327125ac8ae912d8159422de8aac7dbdc25f6
-ms.translationtype: HT
+ms.openlocfilehash: 816ac1d97e7be485717905fe9d5d62b812408446
+ms.sourcegitcommit: 84c79ceea27f7411528defc5ee8ba35ae2bf473c
+ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59429219"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512210"
 ---
-#  <a name="intune-data-warehouse-collections"></a>Intune 資料倉儲集合
+# <a name="intune-data-warehouse-collections"></a>Intune 資料倉儲集合
 
 下列 Intune 資料倉儲集合提供資料倉儲 API 實體 v1.0 集合的屬性、描述和範例。 
 
@@ -670,7 +669,7 @@ MobileAppInstallState 實體代表行動應用程式在被指派至包含裝置�
 |    描述    |    這些條款及條件的描述。     |         |
 |    title    |    這些條款及條件的標題。     |    裝置管理公司原則        |
 |    summaryOfTerms    |    提供給使用者的條款摘要。     |    我同意這些條款及條件。    |
-|    termsAndConditionsBodyText    |    這些條款及條件的內文。       |    「裝置加密」強制使用 6 位數 PIN    |
+|    termsAndConditionsBodyText    |    這些條款及條件的內文。       |    「裝置加密」  強制使用 6 位數 PIN    |
 |    isDeleted    |    指出是否已刪除此值的 True 或 False 值。     |    False    |
 |    startDateInclusiveUTC    |    這些條款及條件的開始日期。     |    8/23/2018 4:01:34 AM    |
 |    endDateEclusiveUTC    |    這些條款及條件的結束日期。     |    12/31/9999 12:00:00 AM    |

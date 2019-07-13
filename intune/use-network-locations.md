@@ -7,7 +7,6 @@ ms.author: mandia
 manager: dougeby
 ms.date: 05/21/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,18 +16,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d2431695f89c9cdf339a0192e27f8140ec042435
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 5491e0d2dfb1aa1989fc202203d9a895823b0b73
+ms.sourcegitcommit: 4b83697de8add3b90675c576202ef2ecb49d80b2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61515325"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67043889"
 ---
 # <a name="use-locations-network-fence-in-intune"></a>使用 Intune 中的位置 (網路範圍)
 
 如果裝置離開某個位置，您可能想要封鎖對公司網路的存取。 Intune 中的**位置**功能提供這項功能。 
 
-您可以建立依據網路位置的合規性原則，也稱為網路隔離。 此原則可確保裝置必須連線至公司網路，以符合規範。 這個原則可以搭配條件式存取原則使用，讓裝置「只」有在連線至公司網路時才能存取工作資源。 裝置未連線至公司網路時，裝置會變成不符合規範，並失去對工作資源的存取權。
+您可以建立依據網路位置的合規性原則，也稱為網路隔離。 此原則可確保裝置必須連線至公司網路，以符合規範。 此原則可以與條件式存取原則搭配使用，如此一來，裝置就「只有」  在連線至公司網路時才能存取工作資源。 裝置未連線至公司網路時，裝置會變成不符合規範，並失去對工作資源的存取權。
 
 請考慮下列案例：
 
@@ -50,26 +49,26 @@ ms.locfileid: "61515325"
 
 ## <a name="create-a-location"></a>建立位置
 
-1. 在 Intune 中，選取 [裝置合規性] > [位置] > [建立]。
+1. 在 Intune 中，選取 [裝置合規性]   > [位置]   > [建立]  。
 
 2. 輸入下列內容：  
 
-   - 必要。 輸入位置的 [名稱]，例如 **Manufacturer floor** 或 **Building 44-secure**。
-   - 選擇性。 以 CIDR (無類別網域間路由選擇) 標記法輸入 [IPv4 範圍]，例如 `aaa.bbb.ccc.ddd/n`。
-   - 選擇性。 輸入 [IPv4 閘道] 位址，例如 `aaa.bbb.ccc.ddd`。
-   - 選擇性。 輸入 [IPv4 閘道] 位址，例如 `aaa.bbb.ccc.ddd`。
-   - 選擇性。 輸入 [IPv4 DNS 伺服器] 位址的清單。 這項設定使用**子集比對**。 如果裝置上的 IPv4 DNS 伺服器是所定義值的子集，則裝置會被視為在範圍內。 請務必每行輸入一個位址，例如：  
+   - 必要。 輸入位置的 [名稱]  ，例如 **Manufacturer floor** 或 **Building 44-secure**。
+   - 選擇性。 以 CIDR (無類別網域間路由選擇) 標記法輸入 [IPv4 範圍]  ，例如 `aaa.bbb.ccc.ddd/n`。
+   - 選擇性。 輸入 [IPv4 閘道]  位址，例如 `aaa.bbb.ccc.ddd`。
+   - 選擇性。 輸入 [IPv4 閘道]  位址，例如 `aaa.bbb.ccc.ddd`。
+   - 選擇性。 輸入 [IPv4 DNS 伺服器]  位址的清單。 這項設定使用**子集比對**。 如果裝置上的 IPv4 DNS 伺服器是所定義值的子集，則裝置會被視為在範圍內。 請務必每行輸入一個位址，例如：  
      `aaa.bbb.ccc.ddd`  
      `aaa.bbb.ccc.ddd`
-   - 選擇性。 輸入 [DNS 尾碼] 的清單。 這項設定使用**子集比對**。 如果裝置上的 DNS 尾碼是所定義值的子集，則裝置會被視為在範圍內。 請務必在每一行中輸入一個網域名稱，例如：  
+   - 選擇性。 輸入 [DNS 尾碼]  的清單。 這項設定使用**子集比對**。 如果裝置上的 DNS 尾碼是所定義值的子集，則裝置會被視為在範圍內。 請務必在每一行中輸入一個網域名稱，例如：  
      `contoso.com`  
      `contoso.org`
 
-3. [儲存] 變更。
+3. [儲存]  變更。
 
 ## <a name="create-the-location-compliance-policy"></a>建立位置合規性原則
 
-當您建立合規性原則時，選取 [Android] 作為 [平台]。 在 [位置] 中，您可以選擇一或多個新增的網路位置。 這些位置是您要為裝置建立之網路範圍的一部分。
+當您建立合規性原則時，選取 [Android]  作為 [平台]  。 在 [位置]  中，您可以選擇一或多個新增的網路位置。 這些位置是您要為裝置建立之網路範圍的一部分。
 
 [建立依據網路位置的合規性原則](compliance-policy-create-android.md#locations)提供一些指引。
 

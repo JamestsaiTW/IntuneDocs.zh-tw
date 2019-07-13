@@ -8,7 +8,6 @@ ms.author: erikre
 manager: dougeby
 ms.date: 04/09/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,25 +17,25 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c361c6054cf52c802155587084eaea76e024f78c
-ms.sourcegitcommit: 601327125ac8ae912d8159422de8aac7dbdc25f6
-ms.translationtype: HT
+ms.openlocfilehash: 2b1fe488ed7d295a40b42c1fb17a76693004be4d
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
+ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59429177"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67547926"
 ---
 # <a name="reference-for-devices-entities"></a>裝置實體的參考
 
-[裝置] 類別包含的行動裝置實體，可追蹤下列資訊：
+[裝置]  類別包含的行動裝置實體，可追蹤下列資訊：
 
-  -  裝置類型
-  -  裝置註冊和註冊狀態
-  -  裝置擁有權
-  -  裝置管理狀態
-  -  Azure AD 裝置成員資格的狀態
-  -  註冊狀態
-  -  裝置的歷程資訊
-  -  裝置上的應用程式清查
+  - 裝置類型
+  - 裝置註冊和註冊狀態
+  - 裝置擁有權
+  - 裝置管理狀態
+  - Azure AD 裝置成員資格的狀態
+  - 註冊狀態
+  - 裝置的歷程資訊
+  - 裝置上的應用程式清查
 
 ## <a name="devicetypes"></a>DeviceTypes
 

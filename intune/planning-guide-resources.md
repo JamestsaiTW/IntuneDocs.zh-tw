@@ -8,7 +8,6 @@ ms.author: dougeby
 manager: dougeby
 ms.date: 01/02/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.reviewer: jeffbu, cgerth
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 14c1dcef4479cbbe6606cf4bb107514a21d7ab21
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: e3ed61f556cadf3ba04f7c33fbede2102c94b18f
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61512656"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67549315"
 ---
 # <a name="additional-resources-for-planning-your-intune-deployment"></a>規劃 Intune 部署的其他資源
 
@@ -51,12 +50,12 @@ ms.locfileid: "61512656"
 
 請參閱 Intune 部署規劃、設計和實作程序期間可能有用之其他資訊的這些資源。
 
--   [Microsoft Intune 文件](/intune/) - 一組完整的 Intune 文件。
+- [Microsoft Intune 文件](/intune/) - 一組完整的 Intune 文件。
 
--   [Intune 部落格](https://blogs.technet.microsoft.com/enterprisemobility/) - 協助您了解 Intune 如何融入大型企業行動力願景的文章。
+- [Intune 部落格](https://blogs.technet.microsoft.com/enterprisemobility/) - 協助您了解 Intune 如何融入大型企業行動力願景的文章。
 
--   [Microsoft 信任中心](http://www.microsoft.com/TrustCenter) - 了解 Microsoft 在所有 Microsoft 雲端產品和服務中促進安全性、隱私權、合規性和透明度的方法。
+- [Microsoft 信任中心](http://www.microsoft.com/TrustCenter) - 了解 Microsoft 在所有 Microsoft 雲端產品和服務中促進安全性、隱私權、合規性和透明度的方法。
 
--   [Intune User Voice](http://microsoftintune.uservoice.com/) - 想要對某項功能提出要求，或與其他客戶一起對某些功能進行投票嗎？ 透過 User Voice 提供有關 Intune 的意見反應。 我們很重視您的意見。
+- [Intune User Voice](http://microsoftintune.uservoice.com/) - 想要對某項功能提出要求，或與其他客戶一起對某些功能進行投票嗎？ 透過 User Voice 提供有關 Intune 的意見反應。 我們很重視您的意見。
 
--   [註冊指南](https://gallery.technet.microsoft.com/Intune-End-User-Enrollment-3a0c9b0c?WT.mc_id=Blog_Intune_General_PCIT) - 您可以依原樣使用這組文件，或修改它並作為與使用者之間通訊計劃一部分，以協助使用者了解在 Intune 中註冊其個人裝置的意義。
+- [註冊指南](https://gallery.technet.microsoft.com/Intune-End-User-Enrollment-3a0c9b0c?WT.mc_id=Blog_Intune_General_PCIT) - 您可以依原樣使用這組文件，或修改它並作為與使用者之間通訊計劃一部分，以協助使用者了解在 Intune 中註冊其個人裝置的意義。

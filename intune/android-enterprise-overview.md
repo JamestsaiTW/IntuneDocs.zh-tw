@@ -8,7 +8,6 @@ ms.author: erikje
 manager: dougeby
 ms.date: 01/22/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 305ed5c18ad0e8beeaa47bc644266d4cb19f80e6
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 1649c6256e4df61b538e2adee87512617b677bb4
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61501046"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67547500"
 ---
 # <a name="manage-android-work-profile-devices-with-intune"></a>使用 Intune 管理 Android 工作設定檔裝置
 
@@ -59,19 +58,19 @@ Android Enterprise 不提供預設電子郵件應用程式，也不會像 iOS �
 
 Intune 會在將 Gmail 及 Nine Work 應用程式當成工作應用程式管理時，提供它們適用的組態範本。 其他支援應用程式組態設定檔的電子郵件應用程式可以透過行動裝置應用程式設定原則加以設定。
 
-若是對 Android Enterprise 工作設定檔裝置使用 Exchange ActiveSync 條件式存取，請考慮使用 Gmail 或 Nine Work 電子郵件應用程式。 此外也支援 Android 版的 Microsoft Outlook 應用程式，或其他任何經由 ADAL 使用新式驗證的電子郵件應用程式。 如需詳細資訊，請參閱[如何在 Microsoft Intune 中設定電子郵件設定](email-settings-configure.md)。
+如果您針對 Android Enterprise 工作設定檔裝置使用 Exchange ActiveSync 條件式存取，請考慮使用 Gmail 或 Nine Work 電子郵件應用程式。 此外也支援 Android 版的 Microsoft Outlook 應用程式，或其他任何經由 ADAL 使用新式驗證的電子郵件應用程式。 如需詳細資訊，請參閱[如何在 Microsoft Intune 中設定電子郵件設定](email-settings-configure.md)。
 
 ## <a name="app-protection-policies"></a>應用程式防護原則
 
-在工作設定檔和個人設定檔中完全支援已套用的應用程式保護原則。 您可以在 Android 應用程式發行主控台 (https://play.google.com/apps/publish) 中發行企業營運應用程式。 此主控台提供可以讓您將應用程式設為不對組織公開的選項。 如需詳細資訊，請參閱[在 Intune 中為 Android Enterprise 工作設定檔裝置新增裝置合規性政策](compliance-policy-create-android-for-work.md)。 如需應用程式防護原則的一般資訊，請參閱[什麼是應用程式防護原則？](app-protection-policy.md)
+在工作設定檔和個人設定檔中完全支援已套用的應用程式保護原則。 您可以在 Android 應用程式發行主控台 (https://play.google.com/apps/publish ) 中發行企業營運應用程式。 此主控台提供可以讓您將應用程式設為不對組織公開的選項。 如需詳細資訊，請參閱[在 Intune 中為 Android Enterprise 工作設定檔裝置新增裝置合規性政策](compliance-policy-create-android-for-work.md)。 如需應用程式防護原則的一般資訊，請參閱[什麼是應用程式防護原則？](app-protection-policy.md)
 
 ## <a name="vpn-profiles"></a>VPN 設定檔
 
 VPN 支援類似於 Android VPN 設定檔， Android Enterprise 管理的可用相同 VPN 提供者與基本設定選項有兩個不同之處：
 
--  **設定檔範圍內的 VPN** – VPN 連線受限在只有部署到公司設定檔的應用程式。 只有受 Android Enterprise 管理的應用程式才可使用此 VPN 連線。 裝置上的個人應用程式無法使用受管理的 VPN 連線。 如需詳細資訊，請參閱 [Android Enterprise VPN 設定](vpn-settings-android.md#android-enterprise-vpn-settings)。
+- **設定檔範圍內的 VPN** – VPN 連線受限在只有部署到公司設定檔的應用程式。 只有受 Android Enterprise 管理的應用程式才可使用此 VPN 連線。 裝置上的個人應用程式無法使用受管理的 VPN 連線。 如需詳細資訊，請參閱 [Android Enterprise VPN 設定](vpn-settings-android.md#android-enterprise-vpn-settings)。
 
--  **應用程式專屬 VPN** – 若 VPN 提供者支援下列項目，就能在 Intune 中設定應用程式特定的 VPN：
+- **應用程式專屬 VPN** – 若 VPN 提供者支援下列項目，就能在 Intune 中設定應用程式特定的 VPN：
     - 應用程式特定 VPN 的組態
     - 透過 Android Enterprise 應用程式組態設定檔來設定個別應用程式 VPN 的功能。
     如需詳細資訊，請參閱[使用 Microsoft Intune 自訂設定檔來建立 Android 裝置的個別應用程式 VPN 設定檔](android-pulse-secure-per-app-vpn.md)。
@@ -80,9 +79,9 @@ VPN 支援類似於 Android VPN 設定檔， Android Enterprise 管理的可用�
 
 Android 管理可使用的相同憑證設定檔設定選項，在 Android Enterprise 工作設定檔裝置上也可使用。 Android Enterprise 提供增強的憑證管理 API。 增強的憑證管理提供下列功能：
 
--  確保使用者的憑證部署採用無訊息模式而且無縫執行。
--  確保當裝置從 Intune 淘汰並移除工作設定檔之後，會移除部署的憑證。
--  提供經過改良的傳訊功能，可以通知使用者其 IT 部門已透過管理服務部署及設定憑證。
+- 確保使用者的憑證部署採用無訊息模式而且無縫執行。
+- 確保當裝置從 Intune 淘汰並移除工作設定檔之後，會移除部署的憑證。
+- 提供經過改良的傳訊功能，可以通知使用者其 IT 部門已透過管理服務部署及設定憑證。
 
 如需詳細資訊，請參閱[在 Microsoft Intune 中設定裝置的憑證設定檔](certificates-configure.md)。
 

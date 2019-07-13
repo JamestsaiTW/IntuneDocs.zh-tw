@@ -7,7 +7,6 @@ ms.author: mandia
 manager: dougeby
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -15,12 +14,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e040743975a482c702e0c0168a4fd6315a2dac8
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 4cae90723c7ff92a8042f068fb49c1709506c7ff
+ms.sourcegitcommit: 063177c6c365fef3642edd7c455790958469aad9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61505738"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66412426"
 ---
 # <a name="configure-device-restriction-settings-in-microsoft-intune"></a>在 Microsoft Intune 中設定裝置限制設定
 
@@ -36,10 +35,10 @@ ms.locfileid: "61505738"
 
 ## <a name="create-the-profile"></a>建立設定檔
 
-1. 在 [Azure 入口網站](https://portal.azure.com)中，選取 [所有服務] > 篩選 **Intune**> 選取 [Intune]。
-2. 選取 [裝置設定] > [設定檔] > [建立設定檔]。
-3. 輸入裝置限制設定檔的 [名稱] 和 [描述]。
-4. 從 [平台] 下拉式清單中，選取要套用自訂設定的裝置平台。 您目前可選擇下列平台之一，進行裝置限制設定︰
+1. 登入 [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)。
+2. 選取 [裝置設定]   > [設定檔]   > [建立設定檔]  。
+3. 輸入裝置限制設定檔的 [名稱]  和 [描述]  。
+4. 從 [平台]  下拉式清單中，選取要套用自訂設定的裝置平台。 您目前可選擇下列平台之一，進行裝置限制設定︰
 
     - **Android**
     - **Android 企業**
@@ -49,7 +48,7 @@ ms.locfileid: "61505738"
     - **Windows 8.1 及更新版本**
     - **Windows 10 及更新版本**
 
-5. 從 [設定檔類型] 下拉式清單中，選擇 [裝置限制]。 若想要建立像是 Surface Hub 等 Windows 10 團隊版裝置的裝置限制設定檔，選擇 [裝置限制 (Windows 10 團隊版)]。
+5. 從 [設定檔類型]  下拉式清單中，選擇 [裝置限制]  。 若想要建立像是 Surface Hub 等 Windows 10 團隊版裝置的裝置限制設定檔，選擇 [裝置限制 (Windows 10 團隊版)]  。
 6. 您可設定的設定會視您選擇的平台而不同。 選擇您平台來進行詳細設定：
 
     - [Android 設定](device-restrictions-android.md)
@@ -62,7 +61,7 @@ ms.locfileid: "61505738"
     - [Windows 10 團隊版設定](device-restrictions-windows-10-teams.md)
     - [Windows Holographic for Business 設定](device-restrictions-windows-holographic.md)
 
-7. 當您完成時，請選取 [確定] > [建立] 儲存變更。
+7. 當您完成時，請選取 [確定]   > [建立]  儲存變更。
 
 設定檔隨即建立，並顯示在設定檔清單上。
 

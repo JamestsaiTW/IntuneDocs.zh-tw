@@ -7,7 +7,6 @@ ms.author: mandia
 manager: dougeby
 ms.date: 01/09/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c2cf06508cc21682a580c09e8207343b09e39eb
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: dc1fca439f0edf4a5d4caaad4ff4f9e0bae5972b
+ms.sourcegitcommit: 78ae22b1a7cb221648fc7346db751269d9c898b1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61506673"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66374040"
 ---
 # <a name="control-access-accounts-and-power-features-on-shared-pc-or-multi-user-devices-using-intune"></a>使用 Intune 控制共用電腦或多重使用者裝置上的存取權、帳戶和電源功能
 
@@ -42,18 +41,18 @@ ms.locfileid: "61506673"
 
 ## <a name="create-the-profile"></a>建立設定檔
 
-1. 在 [Azure 入口網站](https://portal.azure.com)中，選取 [所有服務] > 篩選 [Intune] > 選取 [Intune]。
-2. 選取 [裝置設定] > [設定檔] > [建立設定檔]。
+1. 登入 [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)。
+2. 選取 [裝置設定]   > [設定檔]   > [建立設定檔]  。
 3. 輸入下列內容：
 
    - **名稱**：為新的設定檔輸入描述性名稱。
    - **描述**：輸入設定檔的描述。 這是選擇性設定，但建議執行。
-   - **平台**：選取 [Windows 10 及更新版本]。
-   - **設定檔類型**：選取 [共用的多重使用者裝置]。
+   - **平台**：選取 [Windows 10 及更新版本]  。
+   - **設定檔類型**：選取 [共用的多重使用者裝置]  。
 
 4. 設定 [Windows 10 和更新版本](shared-user-device-settings-windows.md)或 [Windows Holographic for Business](shared-user-device-settings-windows-holographic.md) 的設定。
 
-5. 選取 [確定] > [建立] 儲存您的變更。
+5. 選取 [確定]   > [建立]  儲存您的變更。
 
 您的設定檔已建立並顯示於清單中，但還不會執行任何動作。 請務必對您組織中的裝置群組[指派設定檔](device-profile-assign.md)。
 

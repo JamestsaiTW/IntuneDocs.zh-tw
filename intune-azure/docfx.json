@@ -2,6 +2,9 @@
   "build": {
     "content": [
       {
+        "files": [
+          "**/*.md"
+        ],
         "exclude": [
           "**/obj/**",
           "**/includes/**",
@@ -9,30 +12,29 @@
           "LICENSE",
           "LICENSE-CODE",
           "ThirdPartyNotices"
-        ],
-        "files": [
-          "**/*.md"
         ]
       }
     ],
-    "dest": "intune-azure-redir",
-    "externalReference": [],
-    "fileMetadata": {},
-    "globalMetadata": {},
-    "markdownEngineName": "markdig",
-    "overwrite": [],
     "resource": [
       {
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**"
-        ],
         "files": [
           "**/*.png",
           "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
         ]
       }
     ],
-    "template": []
+    "overwrite": [],
+    "externalReference": [],
+    "globalMetadata": {
+    "disable_contribution_on_translation_quality": ["MT"]
+    },
+    "fileMetadata": {},
+    "template": [],
+    "dest": "intune-azure-redir",
+    "markdownEngineName": "markdig"
   }
 }

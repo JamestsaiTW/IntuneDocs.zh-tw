@@ -6,9 +6,8 @@ keywords: Intune 資料倉儲
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/02/2019
+ms.date: 07/08/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,19 +17,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea55c92fb3254b6e610bec1074e35d9d9c32cd18
-ms.sourcegitcommit: 484a898d54f5386fdbce300225aaa3495cecd6b0
+ms.openlocfilehash: 934742108effda0a88f4bcc42e06daa12c55288c
+ms.sourcegitcommit: 1b7ee2164ac9490df4efa83c5479344622c181b5
 ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58797990"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67648846"
 ---
 # <a name="reference-for-intune-management-extension"></a>Intune 管理延伸模組的參考
 
 **IntuneManagementExtension** 類別包含的行動裝置實體，可追蹤下列資訊：
 
-  -  IntuneManagementExtension 的版本
-  -  IntuneManagementExtension 的安裝狀態
+  - IntuneManagementExtension 的版本
+  - IntuneManagementExtension 的安裝狀態
 
 ## <a name="intunemanagementextensionversion"></a>IntuneManagementExtensionVersion
 

@@ -1,13 +1,12 @@
 ---
-title: 在 Microsoft Intune 中使用協力廠商 CA 與 SCEP - Azure | Microsoft Docs
+title: 在 Microsoft Intune 中搭配使用協力廠商憑證授權單位 (CA) 與 SCEP - Azure | Microsoft Docs
 description: 在 Microsoft Intune 中，您可以新增廠商或協力廠商憑證授權單位 (CA)，以使用 SCEP 通訊協定核發憑證給行動裝置。 在此概觀中，Azure Active Directory (Azure AD) 應用程式會提供 Microsoft Intune 權限來驗證憑證。 然後，在設定 SCEP 伺服器以核發憑證時，使用 AAD 應用程式的應用程式識別碼、驗證金鑰及租用戶識別碼。
 keywords: ''
-author: MandiOhlinger
-ms.author: mandia
+author: brenduns
+ms.author: brenduns
 manager: dougeby
-ms.date: 07/26/2018
+ms.date: 07/03/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -16,28 +15,28 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d042a160d016343c6e8374dff8f74560b9806014
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 0c5ddb32502aa15f6eaf8f5866772ecd32e970d4
+ms.sourcegitcommit: 1b7ee2164ac9490df4efa83c5479344622c181b5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61508471"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67648445"
 ---
 # <a name="add-partner-certification-authority-in-intune-using-scep"></a>使用 SCEP 在 Intune 中新增協力廠商憑證授權單位
 
-在 Microsoft Intune 中，您可以新增協力廠商憑證授權單位 (CA)。 這些 CA 可以使用簡單憑證註冊通訊協定 (SCEP) 將憑證傳遞給行動裝置。 這項功能可以在 Windows、iOS、Android 和 macOS 裝置上核發新憑證和更新憑證。
+搭配 Intune 使用協力廠商憑證授權單位 (CA)。 協力廠商 CA 可以使用簡單憑證註冊通訊協定 (SCEP) 搭配新的或更新的憑證來佈建行動裝置，並可以支援 Windows、iOS、Android 及 macOS 裝置。
 
 使用這項功能分成兩部分：開放原始碼 API 和 Intune 系統管理員工作。
 
 **第 1 部分 - 使用開放原始碼 API**  
-Microsoft 建立了 API，可以整合 Intune 以便驗證憑證、傳送成功或失敗通知，以及使用 SSL，特別是 SSL 通訊端 Factory，來與 Intune 通訊。
+Microsoft 已建立 API 來與 Intune 整合。 透過該 API，您可以驗證憑證、傳送成功或失敗通知，以及使用 SSL (特別是 SSL 通訊端 Factory) 來與 Intune 通訊。
 
-API 提供於 [Intune SCEP API 公用 GitHub 存放庫](http://github.com/Microsoft/Intune-Resource-Access/tree/develop/src/CsrValidation)，供您下載並用於解決方案。 使用此 API 搭配協力廠商 SCEP 伺服器，對 Intune 執行自訂挑戰驗證，然後才傳遞憑證給裝置。
+API 提供於 [Intune SCEP API 公用 GitHub 存放庫](http://github.com/Microsoft/Intune-Resource-Access/tree/develop/src/CsrValidation)，供您下載並用於解決方案。 使用此 API 搭配協力廠商 SCEP 伺服器，來在 SCEP 將憑證佈建給裝置之前，對 Intune 執行自訂挑戰驗證。
 
 [與 Intune SCEP 管理解決方案整合](scep-libraries-apis.md)提供使用 API、其方法和測試您建置之解決方案的更多詳細資料。
 
 **第 2 部分 - 建立應用程式和設定檔**  
-使用 Azure Active Directory (Azure AD) 應用程式，您可以委派權限，讓 Intune 處理來自裝置的 SCEP 要求。 Azure AD 應用程式包含應用程式識別碼和驗證金鑰值，可在開發人員建立的 API 解決方案內使用。 然後，系統管理員就可以使用 Intune 建立和部署 SCEP 憑證設定檔。 您也可以檢視裝置上部署狀態的報告。
+使用 Azure Active Directory (Azure AD) 應用程式，您可以委派權限，讓 Intune 處理來自裝置的 SCEP 要求。 Azure AD 應用程式包含應用程式識別碼和驗證金鑰值，可在開發人員建立的 API 解決方案內使用。 系統管理員接著會使用 Intune 建立並部署 SCEP 憑證設定檔，並可以檢視針對裝置上部署狀態的報告。
 
 本文從系統管理員的觀點，提供這項功能的概觀，包括建立 Azure AD 應用程式。
 
@@ -69,47 +68,40 @@ API 提供於 [Intune SCEP API 公用 GitHub 存放庫](http://github.com/Micros
 
 若要讓協力廠商 SCEP 伺服器能執行與 Intune 的自訂挑戰驗證，請在 Azure AD 中建立應用程式。 此應用程式可提供委派權限給 Intune，以便驗證 SCEP 要求。
 
-請確認您具有必要權限，才能註冊 Azure AD 應用程式。 [必要權限](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)列出步驟。
+請確認您具有必要權限，才能註冊 Azure AD 應用程式。 請參閱 Azure AD 文件中的[必要權限](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) \(部分機器翻譯\)。
 
-**步驟 1：建立 Azure AD 應用程式**
+#### <a name="create-an-application-in-azure-active-directory"></a>在 Azure Active Directory 中建立應用程式  
 
-1. 登入 [Azure 入口網站](https://portal.azure.com)。
-2. 選取 [Azure Active Directory] > [應用程式註冊] > [新增應用程式註冊]。
-3. 輸入名稱並登入 URL。 針對應用程式類型，選取 [Web 應用程式/API]。
-4. 選取 [建立]。
+1. 在 [Azure 入口網站](https://portal.azure.com)中，移至 [Azure Active Directory]   > [應用程式註冊]  ，然後選取 [新增註冊]  。  
 
-[整合應用程式與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)包含關於建立應用程式的一些指引，包括 URL 及名稱的祕訣。
+2. 在 [註冊應用程式]  頁面上，指定下列詳細資料：  
+   - 在 [名稱]  區段中，輸入有意義的應用程式名稱。  
+   - 針對 [支援的帳戶類型]  區段，選取 [任何組織目錄中的帳戶]  。  
+   - 針對 [重新導向 URI]  保留 Web 的預設值，然後為協力廠商 SCEP 伺服器指定登入 URL。  
 
-**步驟 2：提供權限**
+3. 選取 [註冊]  以建立應用程式，並開啟新應用程式的 [概觀] 頁面。  
 
-建立應用程式之後，請提供 Microsoft Intune API 必要權限：
+4. 在應用程式的 [概觀]  頁面上，複製 [應用程式 (用戶端) 識別碼]  值，並加以記錄以供稍後使用。 您稍後將需用到此值。  
 
-1. 在您的 Azure AD 應用程式中，開啟 [設定] > [必要權限]。  
-2. 選取 [新增] > 選取 API > 選取 [Microsoft Intune API] > [選取]。
-3. 在 [選取權限] 中，選擇 [SCEP 挑戰驗證] > [選取]。
-4. 按一下 [完成] 以儲存您的變更。
+5. 在應用程式的瀏覽窗格中，移至 [管理]  下方的 [憑證及祕密]  。 選取 [新增用戶端密碼]  按鈕。 在 [描述] 中輸入值、針對 [到期]  選取任意選項，然後選擇 [新增]  以產生用戶端密碼的「值」  。 
+   > [!IMPORTANT]  
+   > 離開此頁面之前，複製用戶端密碼的值並加以記錄，以便稍後搭配您的協力廠商 CA 實作使用。 此值無法再次顯示。 務必檢閱您協力廠商 CA 的指引，以了解他們想要如何設定應用程式識別碼、驗證金鑰及租用戶識別碼。  
 
-**步驟 3：取得應用程式識別碼和驗證金鑰**
+6. 記錄您的**租用戶識別碼**。 租用戶識別碼是您帳戶中 @ 符號之後的網域文字。 例如，如果您的帳號是 *admin@name.onmicrosoft.com* ，則您的租用戶識別碼是 **name.onmicrosoft.com**。  
 
-接下來，取得 Azure AD 應用程式的識別碼和金鑰值。 需要下列值：
+7. 在應用程式的瀏覽窗格中，移至 [管理]  下方的 [API 權限]  ，然後選取 [新增權限]  。  
 
-- 應用程式識別碼
-- 驗證金鑰
-- 租用戶識別碼
+8. 在 [要求 API 權限]  頁面上，選取 [Intune]  ，然後選取 [應用程式權限]  。 選取 **scep_challenge_provider** 的核取方塊 (SCEP 查問驗證)。  
 
-**取得應用程式識別碼和驗證金鑰**：
+   選取 [新增權限]  以儲存此設定。  
 
-1. 在 Azure AD 中，選取您的新應用程式 ([應用程式註冊])。
-2. 複製 [應用程式識別碼]，並將它儲存在應用程式碼中。
-3. 接下來產生驗證金鑰。 在您的 Azure AD 應用程式中，開啟 [設定] > [金鑰]。
-4. 在 [密碼] 中，輸入描述，然後選擇金鑰的持續時間。 [儲存] 變更。 複製並儲存顯示的值。
+9. 仍然在 [API 權限]  頁面上，選取 [代表 Microsoft 授與管理員同意]  ，然後選取 [是]  。  
+   
+   Azure AD 中的應用程式註冊程序已完成。
 
-    > [!IMPORTANT]
-    > 複製並立即儲存此金鑰，因為它不會再次顯示。 協力廠商 CA 實作需要這個金鑰值。 請務必檢閱他們想要的應用程式識別碼、驗證金鑰及租用戶識別碼設定指引。
 
-**租用戶識別碼**是您帳戶的 @ 符號之後的網域文字。 例如，如果您的帳號是 `admin@name.onmicrosoft.com`，則您的租用戶識別碼是 **name.onmicrosoft.com**。
 
-[取得應用程式識別碼和驗證金鑰](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key)列出取得這些值的步驟，並提供關於 Azure AD 應用程式的更多詳細資料。
+
 
 ### <a name="configure-and-deploy-a-scep-certificate-profile"></a>設定及部署 SCEP 憑證設定檔
 以系統管理員身分，建立 SCEP 憑證設定檔以便將目標設為使用者或裝置。 然後，指派設定檔。
@@ -125,9 +117,14 @@ API 提供於 [Intune SCEP API 公用 GitHub 存放庫](http://github.com/Micros
 ## <a name="third-party-certification-authority-partners"></a>協力廠商憑證授權單位合作夥伴
 下列協力廠商憑證授權單位支援 Intune：
 
-- [Entrust Datacard](http://www.entrustdatacard.com/resource-center/documents/documentation)
+- [Entrust Datacard](https://info.entrustdatacard.com/pki-eval-tool)
 - [EJBCA GitHub 開放原始碼版本](https://github.com/agerbergt/intune-ejbca-connector)
 - [EverTrust](https://evertrust.fr/en/products/)
+- [GlobalSign](https://downloads.globalsign.com/acton/attachment/2674/f-6903f60b-9111-432d-b283-77823cc65500/1/-/-/-/-/globalsign-aeg-microsoft-intune-integration-guide.pdf) \(英文\)
+- [IDnomic](https://www.idnomic.com/) \(英文\)
+- [Sectigo](https://sectigo.com/products) \(英文\)
+- [DigiCert](https://knowledge.digicert.com/tutorials/microsoft-intune.html)
+- [SCEPman](https://azuremarketplace.microsoft.com/marketplace/apps/gluckkanja.scepman) \(英文\)
 
 如果您是有興趣將產品與 Intune 整合的協力廠商 CA，請檢閱 API 指引：
 

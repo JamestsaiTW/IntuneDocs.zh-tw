@@ -8,7 +8,6 @@ ms.author: mandia
 manager: dougeby
 ms.date: 10/23/2018
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -16,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8ce3317bf44e70a64851a0d325e8032d33bab8a
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 04671df820fee96d4090b13f6fa8f6c4f983a1ac
+ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
 ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57566279"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67530223"
 ---
 # <a name="use-custom-settings-for-macos-devices-in-microsoft-intune"></a>在 Microsoft Intune 中使用 macOS 裝置的自訂設定
 
@@ -44,7 +43,7 @@ ms.locfileid: "57566279"
 
   - 在 Profile Manager 中啟用[行動裝置管理](https://help.apple.com/serverapp/mac/5.7/#/apd05B9B761-D390-4A75-9251-E9AD29A61D0C)。
   - 在 Profile Manager 中新增 [macOS 裝置](https://help.apple.com/profilemanager/mac/5.7/#/pm9onzap1984)。
-  - 在 Profile Manager 中新增裝置之後，請移至 [Under the Library] \(在程式庫下\) > [Devices] \(裝置\) > 選取您的裝置 > [Settings] \(設定\)。 輸入裝置的一般、安全性、隱私權、目錄和憑證設定。
+  - 在 Profile Manager 中新增裝置之後，請移至 [Under the Library] \(在程式庫下\)   > [Devices] \(裝置\)  > 選取您的裝置 > [Settings] \(設定\)  。 輸入裝置的一般、安全性、隱私權、目錄和憑證設定。
 
     下載並儲存此檔案。 您將在 Intune 設定檔中輸入此檔案。 
 
@@ -52,21 +51,21 @@ ms.locfileid: "57566279"
 
 ## <a name="create-the-profile"></a>建立設定檔
 
-1. 在 [Azure 入口網站](https://portal.azure.com)中，選取 [所有服務]，篩選 [Intune]，然後選取 [Microsoft Intune]。
-2. 選取 [裝置設定] > [設定檔] > [建立設定檔]。
+1. 登入 [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)。
+2. 選取 [裝置設定]   > [設定檔]   > [建立設定檔]  。
 3. 輸入下列設定：
 
     - **名稱**：輸入設定檔的名稱，例如 `macos custom profile`。
     - **描述**：輸入設定檔的描述。
-    - **平台**：選擇 [macOS]。
-    - **設定檔類型**：選擇 [自訂]。
+    - **平台**：選擇 [macOS]  。
+    - **設定檔類型**：選擇 [自訂]  。
 
-4. 在 [自訂設定] 中，輸入下列設定：
+4. 在 [自訂設定]  中，輸入下列設定：
 
     - **自訂組態設定檔名稱**：輸入原則的名稱。 此名稱會在裝置上和 Intune 狀態中顯示。
-    - **組態設定檔**：瀏覽至使用 Apple Configurator 或 Apple Profile Manager 所建立的組態設定檔。 您匯入的檔案會顯示在 [檔案內容] 區域中。
+    - **組態設定檔**：瀏覽至使用 Apple Configurator 或 Apple Profile Manager 所建立的組態設定檔。 您匯入的檔案會顯示在 [檔案內容]  區域中。
 
-5. 選取 [確定] > [建立] 以建立 Intune 設定檔。 完成時，您的設定檔會顯示在 [裝置設定 - 設定檔] 清單中。
+5. 選取 [確定]   > [建立]  以建立 Intune 設定檔。 完成時，您的設定檔會顯示在 [裝置設定 - 設定檔]  清單中。
 
 ## <a name="next-steps"></a>後續步驟
 

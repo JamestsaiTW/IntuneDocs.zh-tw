@@ -8,7 +8,6 @@ ms.author: dougeby
 manager: dougeby
 ms.date: 01/02/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76c6000c375c3128c0832f3dd6b40fe1ed4cf34b
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 86aefbfc37db7929f9748d4783db319cf97d4545
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61508198"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67548474"
 ---
 # <a name="configure-device-compliance-and-app-management-policies-when-migrating-to-microsoft-intune"></a>移轉至 Microsoft Intune 時設定裝置合規性和應用程式管理原則
 
@@ -31,13 +30,13 @@ ms.locfileid: "61508198"
 
 每個裝置平台可能會提供不同的設定，但 Intune 裝置原則由於提供下列行動裝置管理功能，因而可適用每個裝置平台︰
 
--   管理每個使用者註冊的裝置數目。
+- 管理每個使用者註冊的裝置數目。
 
--   管理裝置設定 (例如裝置層級加密、密碼長度、相機使用方式)。
+- 管理裝置設定 (例如裝置層級加密、密碼長度、相機使用方式)。
 
--   提供應用程式、電子郵件設定檔、VPN 設定檔等。
+- 提供應用程式、電子郵件設定檔、VPN 設定檔等。
 
--   評估安全性合規性原則的裝置層級準則。
+- 評估安全性合規性原則的裝置層級準則。
 
 > [!IMPORTANT]
 > 裝置管理原則不會直接指派給個別的裝置或使用者，而是指派給使用者群組。 原則可直接套用到使用者群組，從而套用到使用者的裝置；或原則可套用到裝置群組，從而套用到群組成員。
@@ -60,11 +59,11 @@ ms.locfileid: "61508198"
 
 您必須建立裝置組態設定檔以強制執行裝置層級設定，例如︰停用相機、App Store、設定單一應用程式模式及主畫面等。 了解[裝置設定檔](device-profiles.md)。
 
-####  <a name="directly-import-ios-configuration-profiles-optional"></a>直接匯入 iOS 組態設定檔 (選用)
+#### <a name="directly-import-ios-configuration-profiles-optional"></a>直接匯入 iOS 組態設定檔 (選用)
 
--   **Apple Configurator iOS 設定檔 (iOS 7.1 和更新版本)：** 如果您現有的 MDM 解決方案使用 Apple Configurator 設定檔 (.mobileconfig 檔案)，Intune 可直接將它們匯入為自訂組態原則。
+- **Apple Configurator iOS 設定檔 (iOS 7.1 和更新版本)：** 如果您現有的 MDM 解決方案使用 Apple Configurator 設定檔 (.mobileconfig 檔案)，Intune 可直接將它們匯入為自訂組態原則。
 
--   **iOS 行動應用程式組態原則︰** 如果您現有的 MDM 解決方案使用 iOS 行動應用程式組態原則，只要它們符合 Apple 指定之屬性清單的 XML 格式，Intune 即可直接匯入它們。
+- **iOS 行動應用程式組態原則︰** 如果您現有的 MDM 解決方案使用 iOS 行動應用程式組態原則，只要它們符合 Apple 指定之屬性清單的 XML 格式，Intune 即可直接匯入它們。
 
 - 了解如何新增 [iOS](custom-settings-ios.md) 的自訂原則。
 
@@ -72,25 +71,25 @@ ms.locfileid: "61508198"
 
 裝置相容性原則可評估安全性導向設定，並提供顯示裝置是否符合公司標準規範的報告。 這類設定包括：
 
--   PIN 長度
+- PIN 長度
 
--   JB 破解狀態
+- JB 破解狀態
 
--   OS 版本
+- OS 版本
 
 請參閱裝置合規性設定的其他資源︰
 
--   了解[裝置合規性原則](device-compliance.md)。
+- 了解[裝置合規性原則](device-compliance.md)。
 
--   了解[如何建立裝置合規性原則](device-compliance-get-started.md)。
+- 了解[如何建立裝置合規性原則](device-compliance-get-started.md)。
 
 ### <a name="task-5-publish-and-deploy-apps"></a>工作 5：發佈和部署應用程式
 
 使用 Intune MDM 時，您可以透過要求應用程式自動安裝或以在公司入口網站提供的方式來提供應用程式。
 
--   [如何新增應用程式](apps-add.md)。
+- [如何新增應用程式](apps-add.md)。
 
--   [如何部署應用程式](apps-deploy.md)。
+- [如何部署應用程式](apps-deploy.md)。
 
 ### <a name="task-6-enable-device-enrollment"></a>工作 6：啟用裝置註冊
 

@@ -8,7 +8,6 @@ ms.author: brenduns
 manager: dougeby
 ms.date: 12/09/2017
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,26 +17,26 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3c2cd696e2e8dabbe8c45a5758d1315c4ca31c4
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 6480c6fb412c12e228b8bc3647045cf15da531e1
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61506436"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67548025"
 ---
 # <a name="symantec-endpoint-protection-mobile-connector"></a>Symantec Endpoint Protection Mobile 連接器
 
 您可以根據由 Symantec Endpoint Protection Mobile (SEP Mobile，一個與 Microsoft Intune 整合的行動裝置威脅防護解決方案) 所進行的風險評估，使用條件式存取來控制行動裝置對公司資源的存取。 風險評估是根據收集自執行 SEP Mobile 裝置的遙測，包括︰
 
--   實體防禦
+- 實體防禦
 
--   網路防禦
+- 網路防禦
 
--   應用程式防禦
+- 應用程式防禦
 
--   弱點防禦
+- 弱點防禦
 
-您可以透過 Intune 裝置合規性政策啟用 SEP Mobile 風險評估，然後使用條件式存取原則，根據偵測到的威脅來允許或封鎖不合規範的裝置存取公司資源。
+您可以透過 Intune 裝置合規性政策啟用 SEP Mobile 風險評估，然後使用條件式存取原則，根據偵測到的威脅來允許或封鎖不符合規範的裝置存取公司資源。
 
 ## <a name="how-do-intune-and-sep-mobile-help-protect-your-company-resources"></a>Intune 和 SEP Mobile 如何協助保護您的公司資源？
 
@@ -49,9 +48,9 @@ Intune 裝置合規性政策包含以 SEP Mobile 風險評估為基礎的 SEP Mo
 
 Intune 支援兩種與 SEP Mobile 整合的模式：
 
--   「基本設定」是唯讀模式，允許 Intune 中的裝置看見 SEP Mobile。
+- 「基本設定」  是唯讀模式，允許 Intune 中的裝置看見 SEP Mobile。
 
--   「完整整合」可讓 SEP Mobile 向 Intune 報告裝置風險和安全性事件詳細資料。
+- 「完整整合」  可讓 SEP Mobile 向 Intune 報告裝置風險和安全性事件詳細資料。
 
 ## <a name="sample-scenarios"></a>範例案例
 
@@ -61,11 +60,11 @@ Intune 支援兩種與 SEP Mobile 整合的模式：
 
 在裝置上偵測到惡意應用程式 (例如惡意程式碼) 時，您可以封鎖裝置，直到解決威脅為止︰
 
--   連線到公司電子郵件
+- 連線到公司電子郵件
 
--   使用 OneDrive for Work 應用程式來同步處理公司檔案
+- 使用 OneDrive for Work 應用程式來同步處理公司檔案
 
--   存取公司應用程式
+- 存取公司應用程式
 
 **於偵測到惡意應用程式時進行封鎖：**
 
@@ -77,7 +76,7 @@ Intune 支援兩種與 SEP Mobile 整合的模式：
 
 ### <a name="control-access-based-on-threat-to-network"></a>根據網路威脅來控制存取權
 
-偵測網路中的「攔截式攻擊」等威脅，並根據裝置風險保護對 Wi-Fi 網路的存取。
+偵測網路中的「攔截式攻擊」  等威脅，並根據裝置風險保護對 Wi-Fi 網路的存取。
 
 **封鎖透過 Wi-Fi 的網路存取︰**
 
@@ -89,7 +88,7 @@ Intune 支援兩種與 SEP Mobile 整合的模式：
 
 ### <a name="control-access-to-sharepoint-online-based-on-threat-to-network"></a>根據網路威脅來控制 SharePoint Online 的存取權
 
-偵測網路中的「攔截式攻擊」等威脅，並根據裝置風險防止對公司檔案進行同步處理。
+偵測網路中的「攔截式攻擊」  等威脅，並根據裝置風險防止對公司檔案進行同步處理。
 
 **偵測到網路威脅時封鎖 SharePoint Online：**
 
@@ -101,17 +100,17 @@ Intune 支援兩種與 SEP Mobile 整合的模式：
 
 ## <a name="supported-platforms"></a>支援的平台
 
--   **Android 4.1 和更新版本**
+- **Android 4.1 和更新版本**
 
--   **iOS 8 和更新版本**
+- **iOS 8 和更新版本**
 
 ## <a name="pre-requisites"></a>必要條件
 
--   Azure Active Directory Premium
+- Azure Active Directory Premium
 
--   Microsoft Intune 訂閱
+- Microsoft Intune 訂閱
 
--   Symantec Endpoint Protection Mobile 訂用帳戶
+- Symantec Endpoint Protection Mobile 訂用帳戶
 
 如需詳細資訊，請參閱 [Symantec 網站](https://www.skycure.com/skycure-microsoft-integration/) \(英文\)。
 

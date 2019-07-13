@@ -6,9 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/02/2019
+ms.date: 07/08/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c516c53c38eb033aa2a9688c40b301bedcc7a034
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: cd199558795ba742b45e5c7d67b629a7cd3904bc
+ms.sourcegitcommit: 1b7ee2164ac9490df4efa83c5479344622c181b5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61508339"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649041"
 ---
 # <a name="configure-app-protection-policies-optional"></a>設定應用程式保護原則 (選用)
 
@@ -48,7 +47,7 @@ ms.locfileid: "61508339"
 
 Intune 可以在移轉期間提供公司資料保護，所以在沒有裝置層級的管理時，您的公司資料仍會受到完整保護。
 
-在舊的 MDM 提供者停用條件式存取時，使用者在您將他們移轉到 Intune 的同時仍可維持生產力。
+當您在舊的 MDM 提供者中停用條件式存取時，使用者在您將其上線至 Intune 的同時仍能保有生產力。
 
 ## <a name="task-list-for-app-protection-policies"></a>應用程式保護原則的工作清單
 

@@ -8,7 +8,6 @@ ms.author: brenduns
 manager: dougeby
 ms.date: 07/03/2017
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,18 +17,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac9ecbdd55fff39cbdf1b772d2db8e364730e90e
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: f9438c3c566dc62acfa7567428ebe3a6a6be4777
+ms.sourcegitcommit: ede86a3cb094c12e3e218b956abb9935bec76902
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61508714"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67572571"
 ---
 # <a name="check-point-sandblast-mobile-threat-defense-connector-with-intune"></a>Check Point SandBlast Mobile Threat Defense 連接器與 Intune
 
-您可以根據 Check Point SandBlast Mobile (一個整合了 Microsoft Intune 的行動威脅防禦解決方案) 進行的風險評估，使用條件式存取來控制行動裝置對公司資源的存取。 風險評估的依據是收集自執行 Check Point SandBlast Mobile 應用程式裝置的遙測。
+您可以根據由 Check Point SandBlast Mobile (與 Microsoft Intune 整合的 Mobile Threat Defense 解決方案) 所進行的風險評量，使用條件式存取來控制行動裝置對公司資源的存取。 風險評估的依據是收集自執行 Check Point SandBlast Mobile 應用程式裝置的遙測。
 
-您可以根據透過 Intune 裝置相容性原則啟用的 Check Point SandBlast Mobile 風險評估，設定條件式存取原則。透過該原則，您可以根據偵測到的威脅來允許或封鎖不相容的裝置存取公司資源。
+您可以根據透過 Intune 裝置合規性政策所啟用的 Check Point SandBlast Mobile 風險評量，來設定條件式存取原則，而您可以根據偵測到的威脅，使用它們來允許或封鎖不符合規範的裝置存取公司資源。
 
 ## <a name="how-do-intune-and-check-point-sandblast-mobile-help-protect-your-company-resources"></a>Intune 和 Check Point SandBlast Mobile 如何協助保護您的公司資源？
 
@@ -46,11 +45,11 @@ closing syntax for comment above is missing. Please insert closing syntax at int
 
 在裝置上偵測到惡意應用程式 (例如惡意程式碼) 時，您可以封鎖裝置，直到解決威脅為止︰
 
--   連線到公司電子郵件
+- 連線到公司電子郵件
 
--   使用 OneDrive for Work 應用程式來同步處理公司檔案
+- 使用 OneDrive for Work 應用程式來同步處理公司檔案
 
--   存取公司應用程式
+- 存取公司應用程式
 
 **於偵測到惡意應用程式時進行封鎖：**
 
@@ -62,7 +61,7 @@ closing syntax for comment above is missing. Please insert closing syntax at int
 
 ### <a name="control-access-based-on-threat-to-network"></a>根據網路威脅來控制存取權
 
-偵測網路中 **中間人攻擊** 等威脅，並根據裝置風險保護對 Wi-Fi 網路的存取。
+偵測網路中的「攔截式攻擊」  等威脅，並根據裝置風險保護對 Wi-Fi 網路的存取。
 
 **封鎖透過 Wi-Fi 的網路存取︰**
 
@@ -74,7 +73,7 @@ closing syntax for comment above is missing. Please insert closing syntax at int
 
 ### <a name="control-access-to-sharepoint-online-based-on-threat-to-network"></a>根據網路威脅來控制 SharePoint Online 的存取權
 
-偵測網路中 **中間人攻擊** 等威脅，並根據裝置風險防止同步公司檔案。
+偵測網路中的「攔截式攻擊」  等威脅，並根據裝置風險防止對公司檔案進行同步處理。
 
 **偵測到網路威脅時封鎖 SharePoint Online：**
 
@@ -86,18 +85,18 @@ closing syntax for comment above is missing. Please insert closing syntax at int
 
 ## <a name="supported-platforms"></a>支援的平台
 
--   **Android 4.1 和更新版本**
+- **Android 4.1 和更新版本**
 
--   **iOS 8 和更新版本**
+- **iOS 8 和更新版本**
 
 ## <a name="pre-requisites"></a>必要條件
 
--   Azure Active Directory Premium
+- Azure Active Directory Premium
 
--   Microsoft Intune 訂閱
+- Microsoft Intune 訂閱
 
--   Check Point SandBlast Mobile Threat Defense 訂閱
-    -   如需詳細資訊，請參閱 [Check Point SandBlast 網站](https://www.checkpoint.com/)。
+- Check Point SandBlast Mobile Threat Defense 訂閱
+    - 如需詳細資訊，請參閱 [Check Point SandBlast 網站](https://www.checkpoint.com/)。
 
 ## <a name="next-steps"></a>後續步驟
 

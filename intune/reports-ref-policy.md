@@ -6,9 +6,8 @@ keywords: Intune 資料倉儲
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/05/2019
+ms.date: 07/09/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -17,21 +16,21 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f168395be7f0656f18e9e44fe561e9ab3e2e6863
-ms.sourcegitcommit: 484a898d54f5386fdbce300225aaa3495cecd6b0
+ms.openlocfilehash: 4f66cc3a10711b137e081fab98445d73108748a9
+ms.sourcegitcommit: 63b55e81122e5c15893302b109ae137c30855b55
 ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58799013"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713148"
 ---
 # <a name="reference-for-policy-entities"></a>原則實體的參考
 
-[原則] 類別包含的行動實體，可追蹤下列資訊：
+[原則]  類別包含的行動實體，可追蹤下列資訊：
 
-  -  裝置組態設定檔、應用程式組態設定檔和合規性原則的清查  
-  -  每日處於成功、擱置、失敗或錯誤狀態的裝置數目  
-  -  每日處於成功、擱置、失敗或錯誤狀態的使用者數目  
-  -  處於成功、擱置、失敗或錯誤狀態的累積裝置數目  
+  - 裝置組態設定檔、應用程式組態設定檔和合規性原則的清查  
+  - 每日處於成功、擱置、失敗或錯誤狀態的裝置數目  
+  - 每日處於成功、擱置、失敗或錯誤狀態的使用者數目  
+  - 處於成功、擱置、失敗或錯誤狀態的累積裝置數目  
 
 ## <a name="policy"></a>原則
 

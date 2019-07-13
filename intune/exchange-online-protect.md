@@ -7,7 +7,6 @@ author: brenduns
 ms.author: brenduns
 manager: dougeby
 ms.date: 10/31/2017
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.topic: archived
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f61b7e755ea7bfe8d20c3db8c859f148dcf7704
-ms.sourcegitcommit: 25e6aa3bfce58ce8d9f8c054bc338cc3dff4a78b
+ms.openlocfilehash: 64a872a43a0f8353a6f0e5ad15f4a96d25cf6ef0
+ms.sourcegitcommit: 84c79ceea27f7411528defc5ee8ba35ae2bf473c
 ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57460422"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512170"
 ---
 # <a name="protect-office-365-exchange-online-without-requiring-device-management"></a>保護 Office 365 Exchange Online 而不需要進行裝置管理
 

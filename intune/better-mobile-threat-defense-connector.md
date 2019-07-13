@@ -8,25 +8,24 @@ ms.author: brenduns
 manager: dougeby
 ms.date: 07/25/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01e77d3439bd241f04b2a931a61b116469c3e6b2
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 473de0ae24cb3ee2a9f7fbd84ef78e6c25ef6ce6
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61508833"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67547298"
 ---
 # <a name="better-mobile-threat-defense-connector-with-intune"></a>搭配 Intune 使用的 Better Mobile Threat Defense 連接器
 
-您可以根據由 Better Mobile (一個與 Microsoft Intune 整合的 Mobile Threat Defense (MTD) 解決方案) 所進行的風險評定，使用條件式存取來控制行動裝置對公司資源的存取。 風險是根據從執行 Better Mobile 應用程式之裝置所收集的遙測來評定的。
+您可以根據由 Better Mobile (與 Microsoft Intune 整合的 Mobile Threat Defense (MTD) 解決方案) 所進行的風險評量，使用條件式存取來控制行動裝置對公司資源的存取。 風險是根據從執行 Better Mobile 應用程式之裝置所收集的遙測來評定的。
 
-您可以根據透過 Intune 裝置相容性原則啟用的 Better Mobile 風險評估，設定條件式存取原則。透過該原則，您可以根據偵測到的威脅來允許或封鎖不相容的裝置存取公司資源。
+您可以根據透過 Intune 裝置相容性政策所啟用的 Better Mobile 風險評量，來設定條件式存取原則，而您可以根據偵測到的威脅，使用它們來允許或封鎖不符合規範的裝置存取公司資源。
 
 ## <a name="how-do-intune-and-better-mobile-help-protect-your-company-resources"></a>Intune 和 Better Mobile 如何協助保護您的公司資源？
 
@@ -42,11 +41,11 @@ Intune 裝置合規性原則包含以 Better Mobile 風險評定為基礎的 Mob
 
 在裝置上偵測到惡意應用程式 (例如惡意程式碼) 時，您可在解決威脅之前封鎖裝置執行下列動作：
 
--   連線到公司電子郵件
+- 連線到公司電子郵件
 
--   使用 OneDrive for Work 應用程式來同步處理公司檔案
+- 使用 OneDrive for Work 應用程式來同步處理公司檔案
 
--   存取公司應用程式
+- 存取公司應用程式
 
 **於偵測到惡意應用程式時進行封鎖：**
 
@@ -82,19 +81,19 @@ Intune 裝置合規性原則包含以 Better Mobile 風險評定為基礎的 Mob
 
 ## <a name="supported-platforms"></a>支援的平台
 
--   **Android 4.1 和更新版本**
+- **Android 4.1 和更新版本**
 
--   **iOS 8.0 及更新版本**
+- **iOS 8.0 及更新版本**
 
 ## <a name="prerequisites"></a>必要條件
 
--   Azure Active Directory Premium
+- Azure Active Directory Premium
 
--   Microsoft Intune 訂閱
+- Microsoft Intune 訂閱
 
--   Better Mobile Threat Defense 訂用帳戶
+- Better Mobile Threat Defense 訂用帳戶
 
-    -   如需詳細資訊，請參閱 [Better Mobile 網站](https://www.better.mobi/)。
+    - 如需詳細資訊，請參閱 [Better Mobile 網站](https://www.better.mobi/)。
 
 ## <a name="next-steps"></a>後續步驟
 

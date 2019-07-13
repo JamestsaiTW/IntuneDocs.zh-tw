@@ -7,7 +7,6 @@ ms.author: erikre
 manager: dougeby
 ms.date: 04/10/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -17,23 +16,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a834b1f35bdefd91abfc1ec9ca8b44d4eb593cd
-ms.sourcegitcommit: af2512a1342d8037a96a61c8cc2c63e107913733
-ms.translationtype: HT
+ms.openlocfilehash: 961470b9f5671dc39864dac45fdcb49862de4da9
+ms.sourcegitcommit: 1dc9d4e1d906fab3fc46b291c67545cfa2231660
+ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59533604"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735569"
 ---
 # <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>Microsoft Intune App SDK for iOS 開發人員指南
 
 > [!NOTE]
 > 請考慮閱讀 [Intune App SDK 快速入門指南](app-sdk-get-started.md)一文，其中說明如何在每個支援的平台上進行整合準備。
 
-Microsoft Intune App SDK for iOS 可讓您將 Intune 應用程式保護原則 (也稱為 **APP** 或 **MAM** 原則) 併入原生 iOS 應用程式中。 啟用 MAM 的應用程式是與 Intune App SDK 整合的應用程式。 IT 系統管理員可在 Intune 主動管理應用程式時，將應用程式保護原則部署至行動應用程式。
+Microsoft Intune App SDK for iOS 可讓您將 Intune 應用程式保護原則 (也稱為 APP 或 MAM 原則) 併入原生 iOS 應用程式中。 啟用 MAM 的應用程式是與 Intune App SDK 整合的應用程式， IT 系統管理員可在 Intune 主動管理應用程式時，將應用程式保護原則部署至行動應用程式。
 
 ## <a name="prerequisites"></a>必要條件
 
-* 您需要執行 OS X 10.8.5 或更新版本的 Mac OS 電腦，並且該電腦已安裝 Xcode 9 或更新版本。
+* 您需要執行 OS X 10.8.5 或更新版本的 Mac OS 電腦，且該電腦必須已安裝 Xcode 9 或更新版本。
 
 * 您的應用程式必須以 iOS 10 或更新版本為目標。
 
@@ -41,25 +40,37 @@ Microsoft Intune App SDK for iOS 可讓您將 Intune 應用程式保護原則 (�
 
 * 在 [GitHub](https://github.com/msintuneappsdk/ms-intune-app-sdk-ios) 上，下載 Intune App SDK for iOS 的檔案。
 
-## <a name="whats-in-the-sdk"></a>SDK 的功能
+## <a name="whats-in-the-sdk-repository"></a>SDK 存放庫中的內容
 
-Intune App SDK for iOS 包含靜態程式庫、資源檔、API 標頭、偵錯設定 .plist 檔案及設定程式工具。 若要施行大部分原則，用戶端應用程式只需要包含資源檔並以靜態方式連結至程式庫。 進階 Intune 應用程式功能則是透過 API 來強制執行。
+下列檔案與不包含 Swift 程式碼或使用10.2 版之前的 Xcode 編譯的應用程式/延伸模組相關:
 
-本指南涵蓋如何使用 Intune App SDK for iOS 的下列元件：
+* **IntuneMAM.framework**：Intune App SDK 架構。 建議您將此架構連結至您的應用程式/擴充功能, 以啟用 Intune 用戶端應用程式管理。 不過, 有些開發人員可能會偏好靜態程式庫的效能優勢。 請參閱下列項目。
 
-* **libIntuneMAM.a**：Intune App SDK 靜態程式庫。 如果您的應用程式未使用擴充功能，請將這個程式庫連結至專案，讓應用程式進行 Intune 用戶端應用程式管理。
+* **libIntuneMAM.a**：Intune App SDK 靜態程式庫。 開發人員可以選擇連結靜態程式庫, 而不是架構。 因為靜態程式庫會在組建期間直接內嵌至應用程式/延伸模組二進位檔, 所以使用靜態程式庫時, 會有一些啟動時間效能優勢。 不過, 將它整合到您的應用程式是比較複雜的進程。 如果您的應用程式包含任何延伸模組, 則將靜態程式庫連結至應用程式和延伸模組將會產生較大的應用程式套件組合大小, 因為靜態程式庫會內嵌到每個應用程式/延伸模組二進位檔中。 使用架構時, 應用程式和延伸模組可以共用相同的 Intune SDK 二進位檔, 因而產生較小的應用程式大小。
 
-* **IntuneMAM.framework**：Intune App SDK 架構。 請將這個架構連結至專案，讓應用程式進行 Intune 用戶端應用程式管理。 如果您的應用程式使用擴充功能，讓您的專案不會建立靜態程式庫的多個複本，請使用架構而不是靜態程式庫。
+* **IntuneMAMResources.bundle**：包含 SDK 相依資源的資源套件組合。 只有整合靜態程式庫 (Libintunemam.a) 的應用程式才需要資源組合。
 
-* **IntuneMAMResources.bundle**：包含 SDK 相依資源的資源配套。
+下列檔案與包含 Swift 程式碼的應用程式/延伸模組有關, 並以 Xcode 10.2 + 進行編譯:
 
-* **標頭**：公開 Intune App SDK API。 如果您使用 API，您必須加入包含 API 的標頭檔。 下列標頭檔包含 API、資料類型及通訊協定，由 Intune App SDK 提供開發人員使用：
+* **IntuneMAMSwift. framework**: Intune App SDK Swift 架構。 此架構包含您的應用程式將會呼叫之 Api 的所有標頭。 將此架構連結至您的應用程式/擴充功能, 以啟用 Intune 用戶端應用程式管理。
+
+*  IntuneMAMSwiftStub: Intune App SDK Swift Stub framework。 這是 IntuneMAMSwift 所需的相依性, 應用程式/擴充功能必須連結。
+
+
+下列檔案與所有的應用程式/延伸相關:
+
+* **IntuneMAMConfigurator**: 一種工具, 用來設定應用程式或延伸模組的資訊. plist, 以及 Intune 管理的最低必要變更。 根據您的應用程式或延伸模組的功能, 您可能需要對 plist 進行其他手動變更。
+
+* **標頭**：公開公用 Intune App SDK API。 這些標頭包含在 IntuneMAM/IntuneMAMSwift 架構中, 因此使用其中一種架構的開發人員不需要手動將標頭新增至其專案。 選擇要與靜態程式庫 (Libintunemam.a) 連結的開發人員必須在其專案中手動包含這些標頭。
+
+下列標頭檔包含 API、資料類型及通訊協定，由 Intune App SDK 提供開發人員使用：
 
     * IntuneMAMAppConfig.h
     * IntuneMAMAppConfigManager.h
     * IntuneMAMDataProtectionInfo.h
     * IntuneMAMDataProtectionManager.h
     * IntuneMAMDefs.h
+    * IntuneMAMDiagnosticConsole.h
     * IntuneMAMEnrollmentDelegate.h
     * IntuneMAMEnrollmentManager.h
     * IntuneMAMEnrollmentStatus.h
@@ -71,7 +82,7 @@ Intune App SDK for iOS 包含靜態程式庫、資源檔、API 標頭、偵錯�
     * IntuneMAMPolicyManager.h
     * IntuneMAMVersionInfo.h
 
-開發人員只要匯入 IntuneMAM.h，即可使用上述標頭的內容
+開發人員只要匯入 IntuneMAM.h，即可使用先前標頭的內容
 
 
 ## <a name="how-the-intune-app-sdk-works"></a>Intune App SDK 的運作方式
@@ -83,27 +94,42 @@ Intune App SDK for iOS 的目標是以最少的程式碼變更，將管理功能
 
 若要啟用 Intune App SDK，請遵循下列步驟：
 
-1. **選項 1 (建議)**：將 `IntuneMAM.framework` 連結至您的專案。 將 `IntuneMAM.framework` 拖曳至專案目標的 [內嵌的二進位檔案] 清單。
+1. **選項 1-架構 (建議)** : 如果您使用 Xcode 10.2 +, 而您的應用程式/延伸模組包含 Swift `IntuneMAMSwift.framework`代碼`IntuneMAMSwiftStub.framework` , 請將`IntuneMAMSwift.framework` `IntuneMAMSwiftStub.framework`和連結至內嵌的**專案**目標的二進位檔清單。
+
+    否則, 請`IntuneMAM.framework`將連結至您的`IntuneMAM.framework`目標: **將拖曳**至專案目標的內嵌二進位檔清單。
 
    > [!NOTE]
    > 如果您使用架構，則必須先手動去除通用架構中的模擬器架構，再將應用程式提交至 App Store。 請參閱[將應用程式提交至 App Store](#submit-your-app-to-the-app-store) 以取得詳細資料。
 
-   **選項 2**︰連結至 `libIntuneMAM.a` 程式庫。 將 `libIntuneMAM.a` 程式庫拖曳至專案目標的 「Linked Frameworks and Libraries」 (連結架構和程式庫) 清單中。
+   **選項 2-靜態程式庫**: 此選項僅適用于不含 Swift 程式碼或使用 Xcode < 10.2 建立的應用程式/延伸模組。 連結至 `libIntuneMAM.a` 程式庫。 將 `libIntuneMAM.a` 程式庫拖曳至專案目標的 「Linked Frameworks and Libraries」 (連結架構和程式庫)  清單中。
 
     ![Intune App SDK iOS：連結的架構和程式庫](./media/intune-app-sdk-ios-linked-frameworks-and-libraries.png)
 
     將 `-force_load {PATH_TO_LIB}/libIntuneMAM.a` 加入下列任一項中，並以 Intune App SDK 位置取代 `{PATH_TO_LIB}` ：
-   * 專案的 `OTHER_LDFLAGS` 組建組態設定
-   * Xcode UI 的 [Other Linker Flags] \(其他連結器旗標\)
+   * 專案的 `OTHER_LDFLAGS` 組建組態設定。
+   * Xcode UI 的 [Other Linker Flags] \(其他連結器旗標\)  。
 
      > [!NOTE]
-     > 若要尋找 `PATH_TO_LIB`，請選取 `libIntuneMAM.a` 檔案，然後從 [檔案] 功能表中選擇 [取得資訊]。 從 [資訊] 視窗的 [一般] 區段中，複製並貼上 [位置] 資訊 (路徑)。
+     > 若要尋找 `PATH_TO_LIB`，請選取 `libIntuneMAM.a` 檔案，然後從 [檔案]  功能表中選擇 [取得資訊]  。 從 [資訊]  視窗的 [一般]  區段中，複製並貼上 [位置]  資訊 (路徑)。
 
-     藉由拖曳 「Build Phases」 (建置階段) 的 「Copy Bundle Resources」 (複製配套資源) 下的資源配套，將 `IntuneMAMResources.bundle` 資源配套新增至專案。
+     藉由拖曳 「Build Phases」 (建置階段)  的 「Copy Bundle Resources」 (複製配套資源)  下的資源配套，將 `IntuneMAMResources.bundle` 資源配套新增至專案。
 
      ![Intune App SDK iOS：複製配套資源](./media/intune-app-sdk-ios-copy-bundle-resources.png)
+     
+2. 如果您需要從 Swift 呼叫任何 Intune Api, 您的應用程式/擴充功能必須透過目標-C 橋接標頭匯入必要的 Intune SDK 標頭。 如果您的應用程式/擴充功能尚未包含目標-c 橋接標頭, 您可以透過 [ `SWIFT_OBJC_BRIDGING_HEADER`組建設定] 或 Xcode UI 的 **[目標-C 橋接**標頭] 欄位指定一個。 您的橋接標頭看起來應該像這樣:
 
-2. 將下列 iOS 架構新增至專案：  
+   ```objc
+      #import <IntuneMAMSwift/IntuneMAM.h>
+   ```
+   
+   這會讓所有 Swift 來源檔案中的所有 Intune SDK Api 都可供您的應用程式/擴充功能使用。 
+   
+    > [!NOTE]
+    > * 您可以選擇只將特定的 Intune SDK 標頭橋接到 Swift, 而不是全部包含的 IntuneMAM。
+    > * 視您整合的架構/靜態程式庫而定, 標頭檔的路徑可能不同。
+    > * 目前不支援透過模組匯入語句 (例如: 匯入 IntuneMAMSwift) 將 Intune SDK Api 提供給 Swift。 使用目標-C 橋接標頭是建議的方法。
+    
+3. 將下列 iOS 架構新增至專案：  
     * MessageUI.framework  
     * Security.framework  
     * MobileCoreServices.framework  
@@ -116,10 +142,11 @@ Intune App SDK for iOS 的目標是以最少的程式碼變更，將管理功能
     * QuartzCore.framework  
     * WebKit.framework
 
-3. 如果尚未啟用 Keychain 共用，請在每個專案目標中選擇 [功能]，然後啟用 「Keychain Sharing」 (Keychain 共用) 參數來加以啟用。 您必須共用 Keychain 才能繼續進行下一個步驟。
+4. 如果尚未啟用 Keychain 共用，請在每個專案目標中選擇 [功能]  ，然後啟用 「Keychain Sharing」 (Keychain 共用)  參數來加以啟用。 您必須共用 Keychain 才能繼續進行下一個步驟。
 
    > [!NOTE]
    > 您的佈建設定檔必須能夠支援新的 Keychain 共用值。 Keychain 存取群組應該支援萬用字元。 若要確認這項作業，請在文字編輯器中開啟 .mobileprovision 檔案，並搜尋 **keychain-access-groups**，然後確認是否有萬用字元。 例如：
+   >
    >  ```xml
    >  <key>keychain-access-groups</key>
    >  <array>
@@ -127,29 +154,29 @@ Intune App SDK for iOS 的目標是以最少的程式碼變更，將管理功能
    >  </array>
    >  ```
 
-4. 啟用 Keychain 共用之後，請遵循下列步驟建立另一個可供 Intune App SDK 儲存其資料的存取群組。 您可以使用 UI 或權利檔案來建立 Keychain 存取群組。 如果您是使用 UI 來建立 Keychain 存取群組，請務必遵循下列步驟：
+5. 啟用 Keychain 共用之後，請依照步驟建立另一個可供 Intune App SDK 儲存其資料的存取群組。 您可以使用 UI 或權利檔案來建立 Keychain 存取群組。 如果您是使用 UI 來建立 Keychain 存取群組，請務必遵循這些步驟：
 
-    1. 如果您的行動應用程式未定義任何 Keychain 存取群組，請新增應用程式套件組合識別碼作為 [第一個] 群組。
+     a. 如果您的行動應用程式未定義任何 Keychain 存取群組，請新增應用程式套件組合識別碼作為 [第一個]  群組。
     
-    2. 將共用 Keychain 群組 `com.microsoft.intune.mam` 新增至現有的存取群組。 Intune App SDK 使用這個存取群組來儲存資料。
+    b. 將共用 Keychain 群組 `com.microsoft.intune.mam` 新增至現有的存取群組。 Intune App SDK 使用這個存取群組來儲存資料。
     
-    3. 將 `com.microsoft.adalcache` 新增至現有存取群組。
+    c. 將 `com.microsoft.adalcache` 新增至現有存取群組。
     
-        ![Intune App SDK iOS：Keychain 共用](./media/intune-app-sdk-ios-keychain-sharing.png)
+        ![Intune App SDK iOS: keychain sharing](./media/intune-app-sdk-ios-keychain-sharing.png)
     
-    4. 如果您正在直接編輯權利檔案，而不是使用上方所示的 Xcode UI 來建立 Keychain 存取群組，請將 `$(AppIdentifierPrefix)` 附加到 Keychain 存取群組 (Xcode 會自動處理此動作)。 例如：
+    d. 如果您正在直接編輯權利檔案，而不是使用上方所示的 Xcode UI 來建立 Keychain 存取群組，請將 `$(AppIdentifierPrefix)` 附加到 Keychain 存取群組 (Xcode 會自動處理此動作)。 例如：
     
         - `$(AppIdentifierPrefix)com.microsoft.intune.mam`
         - `$(AppIdentifierPrefix)com.microsoft.adalcache`
     
         > [!NOTE]
-        > 權利檔案是行動應用程式特有的 XML 檔案。 它用來指定 iOS 應用程式內的特殊權限和功能。 如果您的應用程式之前沒有權利檔案，啟用 Keychain 共用 (步驟 3) 應該會使得 Xcode 為您的應用程式產生一個權利檔案。 請確定應用程式套件組合識別碼是清單中的第一個項目。
+        > An entitlements file is an XML file that is unique to your mobile application. It is used to specify special permissions and capabilities in your iOS app. If your app did not previously have an entitlements file, enabling keychain sharing (step 3) should have caused Xcode to generate one for your app. Ensure the app's bundle ID is the first entry in the list.
 
-5. 請包含應用程式傳遞給應用程式 Info.plist 檔案之 `LSApplicationQueriesSchemes` 陣列中 `UIApplication canOpenURL` 的每個通訊協定。 繼續進行下一個步驟支援，請務必儲存您的變更。
+6. 請包含應用程式傳遞給應用程式 Info.plist 檔案之 `LSApplicationQueriesSchemes` 陣列中 `UIApplication canOpenURL` 的每個通訊協定。 繼續進行下一個步驟支援，請務必儲存您的變更。
 
-6. 如果您的應用程式尚未使用 FaceID，請務必設定 [NSFaceIDUsageDescription Info.plist 索引鍵](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW75)的預設訊息。 iOS 需要此設定，才能讓使用者知道應用程式預計如何使用 FaceID。 Intune 應用程式防護原則設定在 IT 系統管理員的設定下，可使用 FaceID 作為應用程式存取方法。
+7. 如果您的應用程式尚未使用 FaceID，請務必設定 [NSFaceIDUsageDescription Info.plist 索引鍵](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW75)的預設訊息。 iOS 需要此設定，才能讓使用者知道應用程式預計如何使用 FaceID。 Intune 應用程式防護原則設定在 IT 系統管理員的設定下，可使用 FaceID 作為應用程式存取方法。
 
-7. 使用 [SDK 存放庫](https://github.com/msintuneappsdk/ms-intune-app-sdk-ios)中包含的 IntuneMAMConfigurator 工具來設定您應用程式的 Info.plist。 此工具有三個參數：
+8. 使用 [SDK 存放庫](https://github.com/msintuneappsdk/ms-intune-app-sdk-ios)中包含的 IntuneMAMConfigurator 工具來設定您應用程式的 Info.plist。 此工具有三個參數：
 
    |屬性|用法|
    |---------------|--------------------------------|
@@ -296,6 +323,7 @@ WebViewHandledURLSchemes | 字串陣列 | 指定您應用程式的 WebView 所�
 叫用這個 API 之後，應用程式可以繼續正常運作。 如果註冊成功，SDK 將通知使用者：需要重新啟動應用程式。
 
 範例：
+
 ```objc
 [[IntuneMAMEnrollmentManager instance] loginAndEnrollAccount:@”user@foo.com”];
 ```
@@ -343,6 +371,7 @@ MAMPolicyRequired| 布林值| 指定應用程式在沒有 Intune 應用程式保
 如果應用程式將自行刪除使用者的公司資料，則 `doWipe` 旗標可以設定為 false。 否則，應用程式可以讓 SDK 起始選擇性抹除。 這樣會呼叫應用程式的選擇性抹除委派。
 
 範例：
+
 ```objc
 [[IntuneMAMEnrollmentManager instance] deRegisterAndUnenrollAccount:@”user@foo.com” withWipe:YES];
 ```
@@ -672,7 +701,7 @@ SDK 會追蹤本機檔案擁有者的身分識別，並據以套用原則。 建
 
 ### <a name="are-all-of-the-apis-addressable-through-native-swift-or-the-objective-c-and-swift-interoperability"></a>是否可透過原生 Swift 或 Objective-C 以及 Swift 互通性定址所有 API？
 
-Intune App SDK API 僅限於 Objective-C 且不支援原生 Swift。 必須有 Swift 與 Objective-C 的互通性。
+Intune App SDK API 僅限於 Objective-C 且不支援原生  Swift。 必須有 Swift 與 Objective-C 的互通性。
 
 ### <a name="do-all-users-of-my-application-need-to-be-registered-with-the-app-we-service"></a>是否需要向 APP-WE 服務註冊應用程式的所有使用者？
 
@@ -711,6 +740,10 @@ SDK 將會在背景定期採取下列動作：
 
 可以！ 我們最近才剛改造開放原始碼範例應用程式 [Wagr for iOS](https://github.com/Microsoft/Wagr-Sample-Intune-iOS-App)。 使用 Intune App SDK 的應用程式保護原則現在已啟用 Wagr。
 
+### <a name="how-can-i-troubleshoot-my-app"></a>我該如何針對我的應用程式進行疑難排解？
+
+Intune SDK for iOS 9.0.3 + 支援在行動裝置應用程式中新增診斷主控台的功能, 以用於測試原則和記錄錯誤。 `IntuneMAMDiagnosticConsole.h` `IntuneMAMDiagnosticConsole`定義類別介面, 供開發人員用來顯示 Intune 診斷主控台。 這可讓使用者或開發人員在測試期間收集並共用 Intune 記錄檔, 以協助診斷他們可能會遇到的任何問題。 此 API 對整合者而言是選擇性的。
+
 ## <a name="submit-your-app-to-the-app-store"></a>將應用程式提交至 App Store
 
 Intune App SDK 的靜態程式庫和架構組建是通用二進位檔， 表示它們包含適用於所有裝置和模擬器架構的程式碼。 如果提交至 App Store 的應用程式包含模擬器程式碼，則 Apple 會拒絕提交這些應用程式。 針對僅限裝置組建的靜態程式庫進行編譯時，連結器會自動去除模擬器程式碼。 請遵循下列步驟，確認已移除所有模擬器程式碼，然後再將您的應用程式上傳至 App Store。
@@ -726,4 +759,5 @@ Intune App SDK 的靜態程式庫和架構組建是通用二進位檔， 表示�
     ```bash
     cp ~/Desktop/IntuneMAM.device_only ~/Desktop/IntuneMAM.framework/IntuneMAM
     ```
+
     第一個命令會去除架構 DYLIB 檔案中的模擬器架構。 第二個命令會將僅限裝置 DYLIB 檔案複製回架構目錄。

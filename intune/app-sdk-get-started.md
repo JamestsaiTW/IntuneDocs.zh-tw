@@ -5,9 +5,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/24/2019
+ms.date: 06/04/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -17,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6389bc9790fce45604887bc2d73b3d5d8c35c45
-ms.sourcegitcommit: 02803863eba37ecf3d8823a7f1cd7c4f8e3bb42c
-ms.translationtype: HT
+ms.openlocfilehash: 9e9a50855a26b72b2f6589d9f44ce6deea0588fa
+ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
+ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59423589"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67529175"
 ---
 # <a name="get-started-with-the-microsoft-intune-app-sdk"></a>開始使用 Microsoft Intune App SDK
 
@@ -34,11 +33,11 @@ Intune App SDK 支援跨 iOS 和 Android 的類似案例，而且能為 IT 系�
 
 ### <a name="if-your-app-is-internal-to-your-organization-and-will-not-be-publicly-available"></a>如果應用程式是無法公開的組織內部應用程式：
 
-您**不需要**註冊應用程式。 針對由您公司或為了您公司撰寫的內部[企業營運 (LOB) 應用程式](apps-add.md#app-types-in-microsoft-intune)，IT 管理員將會在內部部署應用程式。 Intune 可偵測是否已使用 SDK 建置應用程式，並允許 IT 系統管理員對其套用應用程式保護原則。 您可以跳到[啟用 iOS 或 Android 應用程式的應用程式保護原則](#enable-your-ios-or-android-app-for-app-protection-policy)這一節。
+您**不需要**  註冊應用程式。 針對由您公司或為了您公司撰寫的內部[企業營運 (LOB) 應用程式](apps-add.md#app-types-in-microsoft-intune)，IT 管理員將會在內部部署應用程式。 Intune 可偵測是否已使用 SDK 建置應用程式，並允許 IT 系統管理員對其套用應用程式保護原則。 您可以跳到[啟用 iOS 或 Android 應用程式的應用程式保護原則](#enable-your-ios-or-android-app-for-app-protection-policy)這一節。
 
 ### <a name="if-your-app-will-be-released-to-a-public-app-store-like-the-apple-app-store-or-google-play"></a>如果您的應用程式將會發行到公開應用程式商店 (例如 Apple App Store 或 Google Play)：
 
-您_**必須**_ 先向 Microsoft Intune 註冊應用程式，並同意註冊條款。 然後 IT 系統管理員就可以將應用程式保護原則套用至受控應用程式，該應用程式將會列為 [Intune 受保護的合作夥伴應用程式](apps-supported-intune-apps.md#partner-apps)。
+您 _**必須**_ 先向 Microsoft Intune 註冊應用程式，並同意註冊條款。 然後 IT 系統管理員就可以將應用程式保護原則套用至受控應用程式，該應用程式將會列為 [Intune 受保護的合作夥伴應用程式](apps-supported-intune-apps.md#partner-apps)。
 
 等到註冊已完成且 Microsoft Intune 小組確認之後，Intune 系統管理員就不會有將應用程式保護原則套用至應用程式深層連結的選項。 Microsoft 也會將您的應用程式加到其 [Microsoft Intune Partner 頁面](https://www.microsoft.com/cloud-platform/microsoft-intune-apps)。 應用程式的圖示將會在那裡顯示，以表示該應用程式支援 Intune 應用程式保護原則。
 
@@ -82,17 +81,17 @@ Intune App SDK 支援跨 iOS 和 Android 的類似案例，而且能為 IT 系�
 
 您需要下列其中一個開發人員指南，協助您將 Intune App SDK 整合到應用程式：
 
-* **[Intune App SDK for iOS 開發人員指南](app-sdk-ios.md)**：本文件將逐步引導您使用 Intune App SDK 啟用原生 iOS 應用程式。
+* **[Intune App SDK for iOS 開發人員指南](app-sdk-ios.md)** ：本文件將逐步引導您使用 Intune App SDK 啟用原生 iOS 應用程式。
 
-* **[Intune App SDK for Android 開發人員指南](app-sdk-android.md)**：本文件將逐步引導您使用 Intune App SDK 來啟用原生 Android 應用程式。
+* **[Intune App SDK for Android 開發人員指南](app-sdk-android.md)** ：本文件將逐步引導您使用 Intune App SDK 來啟用原生 Android 應用程式。
 
-* **[Intune App SDK Xamarin 繫結指南](app-sdk-xamarin.md)**︰本文件將協助您使用 Xamarin for Intune 應用程式保護原則來建置 iOS 和 Android 應用程式。
+* **[Intune App SDK Xamarin 繫結指南](app-sdk-xamarin.md)** ︰本文件將協助您使用 Xamarin for Intune 應用程式保護原則來建置 iOS 和 Android 應用程式。
 
 
 
-## <a name="enable-your-ios-or-android-app-for-app-based-conditional-access"></a>針對應用程式型條件式存取啟用 iOS 或 Android 應用程式
+## <a name="enable-your-ios-or-android-app-for-app-based-conditional-access"></a>為 iOS 或 Android 應用程式啟用以應用程式為基礎的條件式存取
  
- 除了針對應用程式保護原則啟用您的應用程式之外，您的應用程式也需要符合下列條件才能適當地搭配 Azure ActiveDirectory (AAD) 應用程式型條件式存取運作：
+ 除了為您的應用程式啟用應用程式保護原則之外，您的應用程式也需要符合下列條件才能適當地搭配 Azure ActiveDirectory (AAD) 應用程式型條件式存取運作：
  
  * 應用程式是使用 [Azure Active Directory 驗證程式庫](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)所建置並針對 AAD 訊息代理程式驗證啟用。
  
@@ -161,10 +160,10 @@ Intune|iOS|Android|說明|
     * 如果您是為 iOS 或 Android 市集應用程式啟用 Intune 應用程式保護原則的 ISV，完成註冊步驟中所述的 Microsoft Intune 註冊後，即會收到促銷代碼。 促銷代碼將可讓您註冊 Microsoft Intune 試用版，以獲得 1 年的延長使用時間。
 
     * 如果您開發的是不會傳送至商店的企業營運應用程式，您應該透過組織來存取 Microsoft Intune。 您也可以在 [Microsoft Intune](https://admin.microsoft.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0) 中註冊以獲得 1 個月免費試用版。
-    
-    * 如果您要使用終端使用者帳戶來測試行動裝置上的應用程式，請務必在使用系統管理員帳戶登入之後，於 Microsoft 365 系統管理中心網站為該帳戶提供 Intune 授權 (請參閱[指派 Microsoft Intune 授權](https://docs.microsoft.com/en-ca/intune/licenses-assign))。
 
-* **Intune 應用程式保護原則**：若要對應用程式測試所有 Intune 應用程式保護原則，您應該知道每個原則設定的預期行為。 請參閱 [iOS 應用程式保護原則](app-protection-policy-settings-ios.md)和 [Android 應用程式保護原則](app-protection-policy-settings-android.md)的描述。
+    * 如果您要使用終端使用者帳戶來測試行動裝置上的應用程式，請務必在使用系統管理員帳戶登入之後，於 Microsoft 365 系統管理中心網站為該帳戶提供 Intune 授權 (請參閱[指派 Microsoft Intune 授權](https://docs.microsoft.com/intune/licenses-assign))。
+
+* **Intune 應用程式保護原則**：若要對應用程式測試所有 Intune 應用程式保護原則，您應該知道每個原則設定的預期行為。 請參閱 [iOS 應用程式保護原則](app-protection-policy-settings-ios.md)和 [Android 應用程式保護原則](app-protection-policy-settings-android.md)的描述。 如果您的應用程式已整合 Intune SDK，但尚未在 Azure 入口網站中列示為已設定目標的應用程式，您可以透過選取 [+ 更多應用程式] 選項，並在文字方塊中提供套件組合識別碼 (iOS) 或套件名稱 (Android)，以使用原則將它設定為目標。
 
 * **疑難排解**︰如果您在手動測試應用程式的安裝使用者體驗時遇到任何問題，請參閱[針對應用程式安裝問題進行疑難排解](troubleshoot-app-install.md)。 
 
@@ -172,18 +171,15 @@ Intune|iOS|Android|說明|
 
 若您的應用程式使用自己的自訂 Azure Active Directory (AAD) 設定來進行驗證，則您應該針對兩個公用市集應用程式與內部 LOB 應用程式執行下列步驟。 **若您的應用程式使用 Intune SDK 預設用戶端識別碼**，則不要執行步驟。 
 
-一旦在 Azure 租用戶內註冊您的應用程式，且它出現在 [所有應用程式] 下，您就必須將您的應用程式存取權授與 Intune 應用程式保護服務 (先前稱為 MAM 服務). 在 Azure 入口網站中：
+一旦在 Azure 租用戶內註冊您的應用程式，且它出現在 [所有應用程式]  下，您就必須將您的應用程式存取權授與 Intune 應用程式保護服務 (先前稱為 MAM 服務). 在 Azure 入口網站中：
 
-1.  移至 [Azure Active Directory] 刀鋒視窗。
-2.  選取為應用程式設定的 [應用程式註冊]。
-3.  在 [設定] 的 [API 存取] 標題下，選取 [必要權限]。 
-4.  按一下 [+ 新增]。
-5.  按一下 [選取 API]。 
-6.  在搜尋方塊中輸入 **Microsoft 行動應用程式管理**。
-7.  在 API 清單中選取 [Microsoft 行動應用程式管理]，然後按一下 [選取]。
-8.  選取 [Read and Write the User’s App Management Data] \(讀取及寫入使用者的應用程式管理資料\)。
-9.  按一下 [完成]。
-10. 按一下 [授與權限]，然後按一下 [是]。 
+1. 移至 [Azure Active Directory]  刀鋒視窗。
+2. 在 [應用程式註冊]  下，移至應用程式的清單設定。
+3. 按一下 [+ 新增權限]  。
+4. 按一下 [組織使用的 API]  。 
+5. 在搜尋方塊中輸入 **Microsoft 行動應用程式管理**。
+6. 在 [委派權限]  下，選取 [DeviceManagementManagedApps.ReadWrite: Read and Write the User’s App Management Data] \(DeviceManagementManagedApps.ReadWrite：讀取和寫入使用者的應用程式管理資料\)  * 核取方塊。
+7. 按一下 [新增權限]  。
 
 ### <a name="badge-your-app-optional"></a>為應用程式加上徽章 (選擇性)
 

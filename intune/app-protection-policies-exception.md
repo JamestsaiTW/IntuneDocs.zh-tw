@@ -8,7 +8,6 @@ ms.author: erikre
 manager: dougeby
 ms.date: 03/26/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30e1ae80ccfdc94bf352b9596df5ea4b0752d43a
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: d599b2a03985965bd8962bcd9f24bfe7555f131c
+ms.sourcegitcommit: 1dc9d4e1d906fab3fc46b291c67545cfa2231660
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61490169"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735606"
 ---
 # <a name="how-to-create-exceptions-to-the-intune-mobile-application-management-mam-data-transfer-policy"></a>如何建立 Intune 行動應用程式管理 (MAM) 資料傳輸原則的例外狀況
 
@@ -32,7 +31,7 @@ ms.locfileid: "61490169"
 >[!WARNING] 
 > 您必須負責變更資料傳輸例外狀況原則。 新增項目到此原則允許未受管理的應用程式 (不由 Intune 管理的應用程式) 存取由受管理應用程式保護的資料。 對受保護資料的這種存取可能會導致資料安全性外洩。 請您只為您的組織必須使用但不支援 Intune 應用程式 (應用程式保護原則) 的應用程式新增資料傳輸例外狀況。 此外，也請只為您不認為是資料洩漏風險的應用程式新增例外狀況。
 
-在 Intune 應用程式防護原則中，將 [允許應用程式將資料傳送至其他應用程式] 設定為 [受原則管理的應用程式] 表示應用程式只能將資料傳送至由 Intune 管理的應用程式。 如果您需要允許將資料傳送到不支援 Intune 應用程式的特定應用程式，則可以使用 [選取排除的應用程式] 來為此原則建立例外狀況。 豁免允許由 Intune 管理的應用程式根據 URL 通訊協定 (iOS) 或套件名稱 (Android) 叫用非受控應用程式。 根據預設，Intune 會將重要的原生應用程式新增到此例外狀況的清單。 
+在 Intune 應用程式防護原則中，將 [允許應用程式將資料傳送至其他應用程式]  設定為 [受原則管理的應用程式]  表示應用程式只能將資料傳送至由 Intune 管理的應用程式。 如果您需要允許將資料傳送到不支援 Intune 應用程式的特定應用程式，則可以使用 [選取排除的應用程式]  來為此原則建立例外狀況。 豁免允許由 Intune 管理的應用程式根據 URL 通訊協定 (iOS) 或套件名稱 (Android) 叫用非受控應用程式。 根據預設，Intune 會將重要的原生應用程式新增到此例外狀況的清單。 
 
 > [!NOTE]
 > 修改或新增至資料傳輸原則例外狀況，並不會影響其他應用程式保護原則，例如剪下、複製和貼上限制。 
@@ -55,7 +54,7 @@ ms.locfileid: "61490169"
 
 - iOS **Webex** 範例： 若要豁免 **Webex** 應用程式，以允許它由 Intune 受控應用程式叫用，您必須新增下列字串的資料傳輸例外狀況：<code>wbx</code>
     
- - iOS **Maps** 範例：若要豁免原生 **Maps** 應用程式，以允許它由 Intune 受控應用程式叫用，您必須新增下列字串的資料傳輸例外狀況：<code>maps</code>
+- iOS **Maps** 範例： 若要豁免原生 **Maps** 應用程式，以允許它由 Intune 受控應用程式叫用，您必須新增下列字串的資料傳輸例外狀況：<code>maps</code>
 
 - Android **Webex** 範例： 若要豁免 **Webex** 應用程式，以允許它由 Intune 受控應用程式叫用，您必須新增下列字串的資料傳輸例外狀況：<code>com.cisco.webex.meetings</code>
     

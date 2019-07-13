@@ -8,7 +8,6 @@ ms.author: dougeby
 manager: dougeby
 ms.date: 3/22/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,79 +17,79 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 307895935e1cd6fe2489a4ee8ae03333ce97d55b
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 02dcaa26e51f3b8c4632aed0fbc87131cc617532
+ms.sourcegitcommit: ede86a3cb094c12e3e218b956abb9935bec76902
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61512697"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67572290"
 ---
 # <a name="create-a-design"></a>建立設計
 
 您的 Intune 設計以您完成[本指南其他章節](planning-guide.md)時所收集的資訊及做出的決策為基礎， 並協助您將下列各項結合在一起：
 
--   目前的環境
+- 目前的環境
 
--   Intune 部署選項
+- Intune 部署選項
 
--   外部相依性的身分識別需求
+- 外部相依性的身分識別需求
 
--   裝置平台考量
+- 裝置平台考量
 
--   要傳遞的需求  
+- 要傳遞的需求  
 
 雖然有基本的內部部署基礎結構需求，但設計計劃仍有助於確定您獲得符合目的、目標和需求的正確行動裝置管理解決方案。
 
-讓我們詳細檢閱各個區域。 
+讓我們詳細檢閱各個區域。 
 
 ## <a name="record-your-current-environment"></a>記錄目前的環境
 此外，在實作和測試階段期間經常會有設計變更。 請在發生變更時，使用您的設計計劃來記錄這些變更及其背後的原理。
 
 您目前的環境會影響設計決策，應該記錄下以來在進行其他 Intune 設計決策時參考。 以下是如何記錄目前環境的一些範例︰
 
--   **雲端中的身分識別**
+- **雲端中的身分識別**
 
-    -   您使用 DirSync 還是 Azure Active Directory (Azure AD) 連線？
+    - 您使用 DirSync 還是 Azure Active Directory (Azure AD) 連線？
 
-    -   您的環境是否為同盟？
+    - 您的環境是否為同盟？
 
-    -   是否啟用 Multi-Factor Authentication (MFA)？
+    - 是否啟用 Multi-Factor Authentication (MFA)？
 
--   **電子郵件環境**
+- **電子郵件環境**
 
-    -   是否使用 Exchange？ 在內部部署或雲端？
+    - 是否使用 Exchange？ 在內部部署或雲端？
 
-    -   是否正在進行將 Exchange 移轉到雲端的專案？
+    - 是否正在進行將 Exchange 移轉到雲端的專案？
 
--   **目前的行動裝置管理 (MDM) 解決方案**
+- **目前的行動裝置管理 (MDM) 解決方案**
 
-    -   您目前使用其他 MDM 解決方案嗎？
+    - 您目前使用其他 MDM 解決方案嗎？
 
-    -   公司和 BYOD 使用案例使用的 MDM 解決方案為何？
+    - 公司和 BYOD 使用案例使用的 MDM 解決方案為何？
 
-    -   現在使用哪些功能 (例如：應用程式裝置設定、Wi-Fi 設定)？
+    - 現在使用哪些功能 (例如：應用程式裝置設定、Wi-Fi 設定)？
 
-    -   支援的裝置平台有哪些？
+    - 支援的裝置平台有哪些？
 
-    -   哪些群組和有多少使用者使用 MDM 方案？
+    - 哪些群組和有多少使用者使用 MDM 方案？
 
--   **憑證解決方案**
+- **憑證解決方案**
 
-    -   您實作過憑證解決方案嗎？
+    - 您實作過憑證解決方案嗎？
 
-    -   您使用何種類型的憑證？
+    - 您使用何種類型的憑證？
 
--   **系統管理**
+- **系統管理**
 
-    -   您如何管理電腦和伺服器環境？
+    - 您如何管理電腦和伺服器環境？
 
-    -   您使用的是 System Center Configuration Manager 嗎？ 您使用的是協力廠商的系統管理平台嗎？
+    - 您使用的是 System Center Configuration Manager 嗎？ 您使用的是協力廠商的系統管理平台嗎？
 
--   **VPN 解決方案**
+- **VPN 解決方案**
 
-    -   您的 VPN 解決方案為何？
+    - 您的 VPN 解決方案為何？
 
-    -   您會將它同時用於公司和 BYOD 使用案例嗎？
+    - 您會將它同時用於公司和 BYOD 使用案例嗎？
 
 記錄目前的 MDM 環境時，請務必記下可能影響您環境的任何專案或任何其他計劃。 以下示範如何在建立 Intune 設計時記錄目前的環境：
 
@@ -119,11 +118,11 @@ Intune 提供兩種部署選項︰獨立和混合式。 獨立是指 Intune 服�
 
 如果您的組織有全球支援，請務必在訂閱服務時規劃租用戶所在的位置。 國家 (地區) 會在您第一次註冊 Intune 訂閱時定義，並對應至全球下列地區：
 
--   北美
+- 北美
 
--   歐洲、中東和非洲地區
+- 歐洲、中東和非洲地區
 
--   亞洲及太平洋地區
+- 亞洲及太平洋地區
 
 >[!IMPORTANT]
 > 之後無法變更國家 (地區) 與租用戶位置。
@@ -132,11 +131,11 @@ Intune 提供兩種部署選項︰獨立和混合式。 獨立是指 Intune 服�
 
 外部相依性是和 Intune 分開的服務及產品，但卻是 Intune 需求或可能與 Intune 整合。 請務必找出任何外部相依性需求，以及其設定方式。 一些常見的外部相依性範例包括：
 
--   權杖服務 (STS)
+- 權杖服務 (STS)
 
--   使用者和裝置群組
+- 使用者和裝置群組
 
--   公開金鑰基礎結構 (PKI)
+- 公開金鑰基礎結構 (PKI)
 
 我們將在下面更詳細地探索這些常見的外部相依性。
 
@@ -158,9 +157,9 @@ Intune 提供兩種部署選項︰獨立和混合式。 獨立是指 Intune 服�
 
 建議在內部部署 Active Directory 中建立所有群組，再同步處理至 Azure AD。 深入了解使用者和裝置群組的規劃和建立：
 
--   [規劃您的使用者和裝置群組](users-add.md)。
+- [規劃您的使用者和裝置群組](users-add.md)。
 
--   [建立使用者和裝置群組](groups-add.md)。
+- [建立使用者和裝置群組](groups-add.md)。
 
 ### <a name="public-key-infrastructure-pki"></a>公開金鑰基礎結構 (PKI)
 公開金鑰基礎結構向裝置或使用者提供憑證，以安全的方式向服務進行驗證。 Intune 支援 Microsoft PKI 基礎結構。 裝置和使用者憑證可以核發給行動裝置，以滿足憑證式驗證的需求。 使用憑證之前，您必須先判斷是否需要憑證、網路基礎結構可否支援憑證式驗證，以及現有環境目前是否使用憑證。
@@ -171,11 +170,11 @@ Intune 提供兩種部署選項︰獨立和混合式。 獨立是指 Intune 服�
 
 深入了解：
 
--   [如何設定 Intune 憑證設定檔](certificates-configure.md)
+- [如何設定 Intune 憑證設定檔](certificates-configure.md)
 
--   [如何設定 SCEP 的憑證基礎結構](certificates-scep-configure.md)
+- [如何設定 SCEP 的憑證基礎結構](certificates-scep-configure.md)
 
--   [如何設定 PFX 的憑證基礎結構](certficates-pfx-configure.md)
+- [如何設定 PFX 的憑證基礎結構](certficates-pfx-configure.md)
 
 
 
@@ -184,13 +183,13 @@ Intune 提供兩種部署選項︰獨立和混合式。 獨立是指 Intune 服�
 
 請進一步檢閱您裝置的下列層面，以了解如何正確地進行管理。
 
--   支援的裝置平台
+- 支援的裝置平台
 
--   裝置
+- 裝置
 
--   裝置擁有權
+- 裝置擁有權
 
--   大量註冊
+- 大量註冊
 
 讓我們更詳細地檢閱這些區域。
 
@@ -227,17 +226,17 @@ Intune 支援公司擁有的裝置和個人裝置。 如果您透過裝置註冊
 
 我們會在這些章節中檢視下列符合您使用案例需求的功能：
 
--   條款和條件原則
+- 條款和條件原則
 
--   設定原則
+- 設定原則
 
--   資源設定檔
+- 資源設定檔
 
--   應用程式
+- 應用程式
 
--   相容性原則
+- 相容性原則
 
--   條件式存取
+- 條件式存取
 
 讓我們詳細檢閱各個區域。
 
@@ -275,13 +274,13 @@ Intune 支援公司擁有的裝置和個人裝置。 如果您透過裝置註冊
 
 您可以使用設定檔來協助終端使用者連線到公司資料。 Intune 支援許多類型的設定檔。 請參考使用案例和需求，以判斷何時設定設定檔。 所有裝置設定檔依平台類型分類，應該納入設計文件中。
 
--   憑證設定檔
+- 憑證設定檔
 
--   Wi-Fi 設定檔
+- Wi-Fi 設定檔
 
--   VPN 設定檔
+- VPN 設定檔
 
--   電子郵件設定檔
+- 電子郵件設定檔
 
 讓我們詳細檢閱每種設定檔類型。
 
@@ -289,11 +288,11 @@ Intune 支援公司擁有的裝置和個人裝置。 如果您透過裝置註冊
 
 憑證設定檔可讓 Intune 向使用者或裝置核發憑證。 Intune 支援下列項目：
 
--   簡單憑證註冊通訊協定 (SCEP)
+- 簡單憑證註冊通訊協定 (SCEP)
 
--   受信任的根憑證
+- 受信任的根憑證
 
--   PFX 憑證。
+- PFX 憑證。
 
 建議您記錄哪個使用者群組需要憑證、您需要多少憑證設定檔，以及將它們部署到哪些使用者群組。
 
@@ -354,27 +353,27 @@ VPN 設定檔讓使用者從遠端位置安全存取您的網路。 Intune 支�
 
 您可以使用 Intune 透過數種方式向使用者或裝置遞送應用程式。 應用程式類型包括軟體安裝程式應用程式、公用應用程式市集的應用程式、外部連結，或受管理的 iOS 應用程式。 除了個別的應用程式部署，您可以透過 iOS 和 Windows 的大量採購方案管理和部署大量採購的應用程式。 深入了解：
 
--   [您可以遞送的應用程式類型](app-management.md)
+- [您可以遞送的應用程式類型](app-management.md)
 
--   [商務用 iOS 大量採購方案 (VPP)](vpp-apps-ios.md)
+- [商務用 iOS 大量採購方案 (VPP)](vpp-apps-ios.md)
 
--   [商務用 Microsoft 網上商店應用程式](windows-store-for-business.md)
+- [商務用 Microsoft 網上商店應用程式](windows-store-for-business.md)
 
 #### <a name="app-type-requirements"></a>應用程式類型需求
 
 因為可以將應用程式部署至使用者和裝置，所以建議您決定哪些應用程式會由 Intune 管理。 收集清單時，請嘗試回答下列問題︰
 
--   應用程式是否需要與雲端服務整合？
+- 應用程式是否需要與雲端服務整合？
 
--   所有應用程式都可供 BYOD 使用者使用嗎？
+- 所有應用程式都可供 BYOD 使用者使用嗎？
 
--   這些應用程式有哪些部署選項可用？
+- 這些應用程式有哪些部署選項可用？
 
--   貴公司需要為協力廠商提供軟體即服務 (SaaS) 應用程式資料的存取權嗎？
+- 貴公司需要為協力廠商提供軟體即服務 (SaaS) 應用程式資料的存取權嗎？
 
--   應用程式是否需要從使用者裝置存取網際網路？
+- 應用程式是否需要從使用者裝置存取網際網路？
 
--   應用程式是從應用程式市集公開取得，還是自訂的企業營運 (LOB) 應用程式？
+- 應用程式是從應用程式市集公開取得，還是自訂的企業營運 (LOB) 應用程式？
 
 
 #### <a name="app-protection-policies"></a>應用程式保護原則
@@ -390,7 +389,7 @@ VPN 設定檔讓使用者從遠端位置安全存取您的網路。 Intune 支�
 您可以[下載上述資料表的範本](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0)來識別應用程式保護原則需求。
 #### <a name="compliance-policies"></a>合規性政策
 
-相容性原則決定裝置是否符合特定需求。 Intune 使用相容性原則判斷裝置視為相容或不相容。 相容性狀態也可用來限制或允許存取公司資源。 如果需要條件式存取，建議您設計[裝置相容性原則](device-compliance.md)。
+相容性原則決定裝置是否符合特定需求。 Intune 使用相容性原則判斷裝置視為相容或不相容。 相容性狀態也可用來限制或允許存取公司資源。 如果需要條件式存取，建議您設計[裝置合規性政策](device-compliance.md)。
 
 請參考需求和使用案例，判斷您需要多少裝置相容性原則以及哪些使用者群組是目標使用者群組。 此外，您還需要決定，裝置離線多久不簽入，才會視為不相容。
 
@@ -404,20 +403,20 @@ VPN 設定檔讓使用者從遠端位置安全存取您的網路。 Intune 支�
 您可以[下載上述資料表的範本](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0)來識別合規性政策需求。
 #### <a name="conditional-access-policies"></a>條件式存取原則
 
-條件式存取用於僅允許相容裝置存取電子郵件和其他公司資源。 Intune 可搭配 Enterprise Mobility + Security (EMS) 控制對公司資源的存取。 決定您是否需要條件式存取，以及必須保護的項目。 深入了解[使用 Microsoft Intune 限制電子郵件、Office 365 和其他服務的存取](conditional-access.md)。
+條件式存取用於僅允許符合規範的裝置存取電子郵件和其他公司資源。 Intune 可搭配 Enterprise Mobility + Security (EMS) 控制對公司資源的存取。 決定您是否需要條件式存取，以及必須保護的項目。 深入了解[使用 Microsoft Intune 限制電子郵件、Office 365 和其他服務的存取](conditional-access.md)。
 
-針對線上存取，決定哪些平台和使用者群組會是條件式存取原則的目標。 此外，請判斷您是否需要針對 Exchange 內部部署安裝或設定 Intune 連接器： 
+針對線上存取，決定哪些平台和使用者群組將是條件式存取原則的目標。 此外，請判斷您是否需要針對 Exchange 內部部署安裝或設定 Intune 連接器： 
 
--   [Exchange 內部部署](exchange-connector-install.md)
+- [Exchange 內部部署](exchange-connector-install.md)
 
-下例說明如何記錄條件式存取原則︰
+下列範例說明如何記錄條件式存取原則：
 
 | **服務** | **新式驗證的平台** | **基本驗證** | **使用案例** |   
 |:---:|:---:|:---:|:---:|
 | Exchange Online | iOS、Android | 封鎖 Intune 支援平台上不相容的裝置 | 公司、BYOD |
 | SharePoint Online | iOS、Android |  | 公司、BYOD |
 
-您可以[下載上述資料表的範本](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0)來識別條件式存取原則需求。
+您可以[下載上述表格的範本](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0) \(英文\) 來識別條件式存取原則需求。
 
 ## <a name="next-steps"></a>後續步驟
 

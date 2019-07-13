@@ -8,7 +8,6 @@ ms.author: dougeby
 manager: dougeby
 ms.date: 01/01/2018
 ms.topic: archived
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,31 +17,31 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7eaea14817c022f8efc5c1380c569fc5afbafa1
-ms.sourcegitcommit: 484a898d54f5386fdbce300225aaa3495cecd6b0
+ms.openlocfilehash: b612a245e0a12384f8f9e7ec4a2c970afc2fd628
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
 ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58797797"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67548831"
 ---
 # <a name="use-policies-to-simplify-windows-pc-management"></a>使用原則來簡化 Windows 電腦管理
 
 [!INCLUDE [classic-portal](includes/classic-portal.md)]
 
-若要在 Windows 桌面執行 Intune 軟體用戶端，將 Windows 桌面作為電腦管理，您只能使用 Intune 管理主控台原則 [電腦管理] 下的原則。 管理主控台中列出的所有其他原則僅供行動裝置使用。 使用 [電腦管理] 原則，您可以設定 Microsoft Intune Center 的設定、控制電腦的更新，以及設定電腦的 Windows 防火牆。
+若要在 Windows 桌面執行 Intune 軟體用戶端，將 Windows 桌面作為電腦管理，您只能使用 Intune 管理主控台原則 [電腦管理]  下的原則。 管理主控台中列出的所有其他原則僅供行動裝置使用。 使用 [電腦管理]  原則，您可以設定 Microsoft Intune Center 的設定、控制電腦的更新，以及設定電腦的 Windows 防火牆。
 
 ![Windows 電腦的原則範本](media/pc_policy_template.png)
 
 ### <a name="manage-the-microsoft-intune-center"></a>管理 Microsoft Intune Center
 使用者會將 Intune 軟體用戶端視為 **Microsoft Intune Center**。 Microsoft Intune Center 可讓使用者︰
 
--   從公司入口網站取得應用程式。
+- 從公司入口網站取得應用程式。
 
--   檢查更新。
+- 檢查更新。
 
--   管理 Microsoft Intune Endpoint Protection。
+- 管理 Microsoft Intune Endpoint Protection。
 
--  要求遠端協助。
+- 要求遠端協助。
 
 Microsoft Intune Center 會安裝在所有受管理電腦上。 您可以在 Intune 中進行下列設定，而使用者會在 Microsoft Intune Center 中看到這些設定：
 
@@ -52,7 +51,7 @@ Microsoft Intune Center 會安裝在所有受管理電腦上。 您可以在 Int
 |**電話號碼**|管理電腦之系統管理員的電話號碼。<br />最大長度：20 個字元|
 |**電子郵件地址**|管理電腦之系統管理員的電子郵件地址。<br />最大長度：40 個字元|
 |**網站名稱**|使用者支援網站的名稱。<br />最大長度：40 個字元|
-|**網站 URL**|您的支援網站的URL。<br />最大長度：150 個字元|
+|**網站 URL**|您的支援網站的 URL。<br />最大長度：150 個字元|
 |**附註**|使用者看到的附註。<br />最大長度：120 個字元|
 
 請參閱下列資源以取得您可以為 Windows 電腦設定之原則和設定的相關資訊︰
@@ -64,6 +63,6 @@ Microsoft Intune Center 會安裝在所有受管理電腦上。 您可以在 Int
 - [在 Microsoft Intune 中使用 Windows 防火牆原則協助保護 Windows 電腦](help-protect-windows-pcs-using-windows-firewall-policies-in-microsoft-intune.md) - 這些原則可簡化受管理電腦上的 Windows 防火牆設定管理。
 
 
-### <a name="see-also"></a>另請參閱
+### <a name="see-also"></a>請參閱
 
 [使用 Intune 軟體用戶端執行的一般 Windows 電腦管理工作](common-windows-pc-management-tasks-with-the-microsoft-intune-computer-client.md)

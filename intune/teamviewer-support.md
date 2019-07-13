@@ -7,7 +7,6 @@ ms.author: erikje
 manager: dougeby
 ms.date: 02/05/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -16,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd2d9f0a0caf87eb75ba3a9cdc123e69425ceb8b
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 96c05543884e0d9a00b570fb9ed4be1cdef65ca0
+ms.sourcegitcommit: 1ba785f6e51517b63588a292ab5c45b9d9144b72
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61509719"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "66841124"
 ---
 # <a name="use-teamviewer-to-remotely-administer-intune-devices"></a>使用 TeamViewer 來遠端管理 Intune 裝置
 
@@ -44,20 +43,20 @@ ms.locfileid: "61509719"
 
 若要為裝置提供遠端協助，請使用下列步驟來設定 Intune TeamViewer 連接器：
 
-1. 在 [Azure 入口網站](https://portal.azure.com)中，選取 [所有服務]，並搜尋 **Microsoft Intune**。
-2. 在 [Microsoft Intune] 中，選取 [裝置]，然後選取 [TeamViewer 連接器]。
-3. 選取 [連線] 並接受授權合約。
-4. 選取 [登入 TeamViewer 進行授權]。
-5. 隨即開啟一個網頁來顯示 TeamViewer 網站。 輸入您的 TeamViewer 授權認證，然後 [登入]。
+1. 在 [Azure 入口網站](https://portal.azure.com)中，選取 [所有服務]  ，並搜尋 **Microsoft Intune**。
+2. 在 [Microsoft Intune]  中，選取 [裝置]  ，然後選取 [TeamViewer 連接器]  。
+3. 選取 [連線]  並接受授權合約。
+4. 選取 [登入 TeamViewer 進行授權]  。
+5. 隨即開啟一個網頁來顯示 TeamViewer 網站。 輸入您的 TeamViewer 授權認證，然後 [登入]  。
 
 ## <a name="remotely-administer-a-device"></a>遠端管理裝置
 
 設定連接器後，您可以從遠端管理裝置。 請使用下列步驟： 
 
-1. 在 [Azure 入口網站](https://portal.azure.com)中，選取 [所有服務]，並搜尋 **Microsoft Intune**。
-2. 在 [Microsoft Intune] 中，選取 [裝置]，然後選取 [所有裝置]。
-3. 從清單中，選取您想要遠端管理的裝置。 在裝置屬性中，選取 [新的遠端協助工作階段]。
-4. 當 Intune 連線至 TeamViewer 服務之後，您將會看到一些裝置的相關資訊。 [連線] 以啟動遠端工作階段。
+1. 在 [Azure 入口網站](https://portal.azure.com)中，選取 [所有服務]  ，並搜尋 **Microsoft Intune**。
+2. 在 [Microsoft Intune]  中，選取 [裝置]  ，然後選取 [所有裝置]  。
+3. 從清單中，選取您想要遠端管理的裝置。 在裝置屬性中，選取 [新的遠端協助工作階段]  。
+4. 當 Intune 連線至 TeamViewer 服務之後，您將會看到一些裝置的相關資訊。 [連線]  以啟動遠端工作階段。
 
 ![使用 TeamViewer 從遠端管理 Android 裝置：範例](./media/android-teamviewer.png)
 

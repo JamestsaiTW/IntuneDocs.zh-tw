@@ -8,7 +8,6 @@ ms.author: erikje
 manager: dougeby
 ms.date: 02/22/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eef5524cff3ce29e802ca8078ba2b5e104e89775
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: d94f2bd9237e92b22b9d73e4f7777dc0faf3f0fe
+ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61490144"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67529614"
 ---
 # <a name="enroll-ios-devices-in-intune"></a>在 Intune 中註冊 iOS 裝置
 
@@ -83,5 +82,8 @@ Apple School Manager 是針對學校提供的裝置採購暨註冊方案。 就�
 
 設定為無使用者親和性的裝置並不支援公司入口網站，且不應該安裝該 App。 公司入口網站專為有公司認證且需要存取個人化公司資源 (如電子郵件) 的使用者設計。 註冊為無使用者親和性的裝置並非專供單一使用者登入使用。 Kiosk、銷售點 (POS)，或共用公用程式裝置，皆屬註冊為無使用者親和性的常見案例。
 
-如果需要使用者親和性，請在註冊裝置之前確認裝置的註冊設定檔已選取 [使用者親和性]。 若要變更裝置的親和性狀態，您必須將裝置淘汰並重新註冊該裝置。
+如果需要使用者親和性，請在註冊裝置之前確認裝置的註冊設定檔已選取 [使用者親和性]  。 若要變更裝置的親和性狀態，您必須將裝置淘汰並重新註冊該裝置。
 
+## <a name="see-also"></a>請參閱
+
+[針對 Microsoft Intune 中的 iOS 裝置註冊問題進行疑難排解](https://support.microsoft.com/help/4039809) \(英文\)

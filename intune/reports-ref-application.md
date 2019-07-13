@@ -6,9 +6,8 @@ keywords: Intune 資料倉儲
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/19/2019
+ms.date: 07/09/2019
 ms.topic: reference
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: medium
 ms.technology: ''
@@ -18,22 +17,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68eeb174b7cc2be09ea4b6da9f151695157ac819
-ms.sourcegitcommit: 484a898d54f5386fdbce300225aaa3495cecd6b0
+ms.openlocfilehash: 46e90d422afb8ebbd356031d4815708b5b0768f0
+ms.sourcegitcommit: 63b55e81122e5c15893302b109ae137c30855b55
 ms.translationtype: MTE75
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58799243"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713132"
 ---
 # <a name="reference-for-application-entities"></a>應用程式實體的參考
 
-[應用程式] 類別包含的行動裝置實體，可追蹤下列資訊：
+[應用程式]  類別包含的行動裝置實體，可追蹤下列資訊：
 
-  -  應用程式的版本
-  -  應用程式的安裝來源
-  -  建立應用程式的開發人員類型
-  -  應用程式的受管理軟體類型，例如 **sidecar** 或**桌面**。
-  -  應用程式的大量採購方案 (VPP) 狀態
+  - 應用程式的版本
+  - 應用程式的安裝來源
+  - 建立應用程式的開發人員類型
+  - 應用程式的受管理軟體類型，例如 **sidecar** 或**桌面**。
+  - 應用程式的大量採購方案 (VPP) 狀態
 
 ## <a name="apprevision"></a>AppRevision
 
@@ -44,8 +43,8 @@ ms.locfileid: "58799243"
 | AppKey |應用程式的唯一識別碼。 |123 |
 | ApplicationId |應用程式的唯一識別碼 - 類似 AppKey，但此金鑰是自然的。 |b66bc706-ffff-7437-0340-032819502773 |
 | 修訂 |管理員在上傳二進位檔期間提及的版本。 |2 |
-| Title |應用程式的標題。 |Excel |
-| 發行者 |應用程式的發行者。 |Microsoft |
+| 標題 |應用程式的標題。 |Excel |
+| 發佈者 |應用程式的發行者。 |Microsoft |
 | UploadState |應用程式的上傳狀態。 |1 |
 | AppTypeKey |下節要說明的 AppType 參考。 | |
 | VppProgramTypeKey |後文要說明的 VppProgramType 參考。 | |

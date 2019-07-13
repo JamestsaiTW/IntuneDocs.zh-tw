@@ -8,7 +8,6 @@ ms.author: dougeby
 manager: dougeby
 ms.date: 01/02/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6cb081e16767abde4707e7a6c8719b773474fb95
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 9cb08757732aa5cad08ed0a4b535fb20c0aa1df0
+ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61512639"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67528251"
 ---
 # <a name="determine-use-case-scenario-requirements"></a>決定使用案例的需求
 
@@ -51,7 +50,7 @@ ms.locfileid: "61512639"
 下列幾個範例可用於「需求」資料行：
 
 - **安全電子郵件**
-    - Exchange Online/內部部署的條件式存取
+    - Exchange Online / 內部部署的條件式存取
     - Outlook 應用程式保護原則
 
 - **裝置設定**

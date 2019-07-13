@@ -8,7 +8,6 @@ ms.author: erikje
 manager: ''
 ms.date: 12/06/2018
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f753b959d7b2c64358abd92f4276a8e7f55c0f6
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 0c962085ce61f01613bfc04ef0c80699e6f5a3e8
+ms.sourcegitcommit: bccfbf1e3bdc31382189fc4489d337d1a554e6a1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61503997"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67547435"
 ---
 # <a name="automatically-enroll-android-devices-by-using-samsungs-knox-mobile-enrollment"></a>使用 Samsung Knox Mobile Enrollment 自動註冊 Android 裝置
 
@@ -45,15 +44,15 @@ ms.locfileid: "61503997"
 ## <a name="prerequisites"></a>必要條件
 
 若要使用 KME 註冊至 Intune，您必須先遵循下列步驟，在 Samsung Knox 入口網站上註冊您的公司：
-1.  [確認可在您的區域取得 KME](https://www.samsungknox.com/en/solutions/it-solutions/knox-configure/available-countries) \(英文\)：在超過 55 個國家/地區都能取得 KME。 請確定您要進行部署的國家/地區有受到支援。
+1. [確認可在您的區域取得 KME](https://www.samsungknox.com/en/solutions/it-solutions/knox-configure/available-countries) \(英文\)：在超過 55 個國家/地區都能取得 KME。 請確定您要進行部署的國家/地區有受到支援。
 
-2.  [支援的裝置](https://www.samsungknox.com/en/knox-platform/supported-devices/2.4+) \(英文\)：KME 適用於所有 Samsung 裝置，其中 Android 註冊最低要求為 Knox 2.4，Android Enterprise 註冊最低要求為 Knox 2.8。
+2. [支援的裝置](https://www.samsungknox.com/en/knox-platform/supported-devices/2.4+) \(英文\)：KME 適用於所有 Samsung 裝置，其中 Android 註冊最低要求為 Knox 2.4，Android Enterprise 註冊最低要求為 Knox 2.8。
 
-3.  [網路需求](https://docs.samsungknox.com/KME-Getting-Started/Content/firewall_exceptions.htm) \(英文\)：確定您的網路上已允許必要的防火牆和網路存取規則。
+3. [網路需求](https://docs.samsungknox.com/KME-Getting-Started/Content/firewall_exceptions.htm) \(英文\)：確定您的網路上已允許必要的防火牆和網路存取規則。
 
-4.  [註冊 Samsung 帳戶](https://www2.samsungknox.com/en/user/register) \(英文\)：需要 Samsung 帳戶以註冊並啟用 KME，並於單一位置管理所有的 Knox 企業權利。
+4. [註冊 Samsung 帳戶](https://www2.samsungknox.com/en/user/register) \(英文\)：需要 Samsung 帳戶以註冊並啟用 KME，並於單一位置管理所有的 Knox 企業權利。
 
-5.  註冊檢閱：在您的設定檔已完成並提交之後，Samsung 會檢閱您的申請並立即核准它，或是將該申請置於待檢閱的狀態以進行後續追蹤。 在 Samsung 核准您的帳戶之後，您便可以繼續進行後續步驟。
+5. 註冊檢閱：在您的設定檔已完成並提交之後，Samsung 會檢閱您的申請並立即核准它，或是將該申請置於待檢閱的狀態以進行後續追蹤。 在 Samsung 核准您的帳戶之後，您便可以繼續進行後續步驟。
 
 ## <a name="create-mdm-profile"></a>建立 MDM 設定檔
 
@@ -75,7 +74,7 @@ ms.locfileid: "61503997"
 
 ### <a name="for-android"></a>適用於 Android
 
-如需逐步指引，請參閱 [Samsung Knox 設定檔設定精靈](https://docs.samsungknox.com/KME-Getting-Started/Content/getting-started-wizard.htm) \(英文\) 的指示。
+如需逐步指導方針，請參閱 [Samsung Knox 設定檔設定精靈](https://docs.samsungknox.com/KME-Getting-Started/Content/getting-started-wizard.htm) \(英文\) 的指示。
 
 | MDM 設定檔欄位| 必要？ | 值 |
 |-------------------|-----------|-------|
@@ -104,9 +103,9 @@ Associate a Knox license with this profile \(將 Knox 授權與此設定檔相�
 
 針對使用適用於 Android 之 KME 註冊至 Intune 的裝置，您可以透過下列方法設定使用者登入的方式：
 
-- **沒有使用者名稱關聯：** 在 Knox 入口網站中的 [Device details] \(裝置詳細資訊\) 底下，將所新增裝置的 [User ID] \(使用者識別碼\) 和 [Password] \(密碼\) 欄位保留空白。 這會讓使用者在註冊至 Intune 時，必須輸入使用者名稱和密碼。
+- **沒有使用者名稱關聯：** 在 Knox 入口網站中的 [Device details]  \(裝置詳細資訊\) 底下，將所新增裝置的 [User ID]  \(使用者識別碼\) 和 [Password]  \(密碼\) 欄位保留空白。 這會讓使用者在註冊至 Intune 時，必須輸入使用者名稱和密碼。
 
-- **有使用者名稱關聯：** 在 Knox 入口網站的 [Device details] \(裝置詳細資料\) 底下，為已新增的裝置提供 [User ID] \(使用者識別碼\) (例如已指派使用者的使用者名稱，或是[裝置註冊管理員](https://docs.microsoft.com/intune/device-enrollment-manager-enroll)帳戶)。 這會在使用者註冊至 Intune 時預先填入使用者名稱，並要求使用者輸入密碼。
+- **有使用者名稱關聯：** 在 Knox 入口網站的 [Device details]  \(裝置詳細資料\) 底下，為已新增的裝置提供 [User ID]  \(使用者識別碼\) (例如已指派使用者的使用者名稱，或是[裝置註冊管理員](https://docs.microsoft.com/intune/device-enrollment-manager-enroll)帳戶)。 這會在使用者註冊至 Intune 時預先填入使用者名稱，並要求使用者輸入密碼。
 
 > [!NOTE]
 >
@@ -129,7 +128,7 @@ Associate a Knox license with this profile \(將 Knox 授權與此設定檔相�
 
 - **使用 Google Play 帳戶更新：** Google Play 帳戶並非將裝置註冊至 Microsoft Intune 的必要項目。 但未來針對 Intune 公司入口網站應用程式的更新，可能會要求裝置具備 Google Play 帳戶。 註冊 Google 裝置擁有者時，不需要 Google Play 帳戶。
 
-- **忽略「密碼」欄位：** 若 Knox 入口網站 [裝置詳細資料] 中的 [密碼] 欄位已填入，則在 Android 註冊期間，Intune 公司入口網站應用程式會將其忽略。 使用者必須在裝置上輸入密碼以完成裝置註冊。
+- **忽略「密碼」欄位：** 若 Knox 入口網站 [裝置詳細資料]  中的 [密碼]  欄位已填入，則在 Android 註冊期間，Intune 公司入口網站應用程式會將其忽略。 使用者必須在裝置上輸入密碼以完成裝置註冊。
 
 
 ## <a name="getting-support"></a>取得支援

@@ -50,6 +50,8 @@
       href: tutorial-use-autopilot-enroll-devices.md
     - name: 使用 DEP 來註冊 iOS 裝置
       href: tutorial-use-device-enrollment-program-enroll-ios.md
+    - name: 設定 Slack 為使用 Intune
+      href: tutorial-configure-slack-enterprise-grid.md
 - name: 概念
   items:
     - name: 什麼是裝置管理？
@@ -126,6 +128,8 @@
                   href: migration-guide-drive-adoption.md
                 - name: 典型的移轉週期
                   href: migration-guide-cycle.md
+        - name: 規劃溝通
+          href: migration-guide-communication-plan.md
     - name: 設定 Intune
       items:
         - name: 設定 Intune 的步驟
@@ -135,6 +139,10 @@
           items:
             - name: 網路組態
               href: network-bandwidth-use.md
+            - name: Intune 端點
+              href: intune-endpoints.md
+            - name: Intune 美國政府端點
+              href: intune-us-government-endpoints.md
         - name: 登入 Intune
           href: account-sign-up.md
         - name: 設定網域
@@ -263,10 +271,12 @@
           href: device-logout-user.md
         - name: 移除使用者
           href: device-remove-user.md
+        - name: 尋找主要使用者
+          href: find-primary-user.md
         - name: 清除 macOS 裝置
           href: device-erase.md
         - name: 遠端控制行動裝置
-          href: device-profile-android-teamviewer.md
+          href: teamviewer-support.md
         - name: 重設 Windows 10 的 PIN 碼
           href: device-windows-pin-reset.md
         - name: 同步裝置
@@ -299,6 +309,7 @@
           href: device-features-configure.md
         - name: 限制裝置設定與功能
           href: device-restrictions-configure.md
+          displayName: Device restrictions
         - name: 傳遞更新
           href: delivery-optimization-windows.md
           displayName: delivery optimization; updates
@@ -320,6 +331,8 @@
           items:
             - name: 使用預先共用金鑰的 Wi-Fi
               href: wi-fi-profile-shared-key.md
+        - name: macOS 上的延伸模組
+          href: kernel-extensions-overview-macos.md
         - name: 教育版使用測試應用程式
           href: education-settings-configure.md
         - name: 共用的多重使用者裝置
@@ -407,46 +420,56 @@
                       href: mtd-connector-enable.md
                 - name: MTD 應用程式
                   items:
-                    - name: 設定 Lookout
-                      href: lookout-mobile-threat-defense-connector.md
-                      items:
-                        - name: Lookout 與 Intune 整合
-                          href: lookout-mtd-connector-integration.md
-                    - name: 設定 Symantec
-                      href: skycure-mobile-threat-defense-connector.md
-                      items:
-                        - name: Symantec 與 Intune 整合
-                          href: skycure-mtd-connector-integration.md
-                    - name: 設定 Check Point
-                      href: checkpoint-sandblast-mobile-mobile-threat-defense-connector.md
-                      items:
-                        - name: Check Point 與 Intune 整合
-                          href: checkpoint-sandblast-mobile-mtd-connector-integration.md
-                    - name: 設定 Zimperium
-                      href: zimperium-mobile-threat-defense-connector.md
-                      items:
-                        - name: Zimperium 與 Intune 整合
-                          href: zimperium-mtd-connector-integration.md
-                    - name: 設定 Pradeo
-                      href: pradeo-mobile-threat-defense-connector.md
-                      items:
-                        - name: Pradeo 與 Intune 整合
-                          href: pradeo-mtd-connector-integration.md
                     - name: 設定更好行動環境
                       href: better-mobile-threat-defense-connector.md
                       items:
                         - name: 更好的行動環境與 Intune 整合
                           href: better-mobile-mtd-connector-integration.md
+                    - name: 設定 Check Point
+                      href: checkpoint-sandblast-mobile-mobile-threat-defense-connector.md
+                      items:
+                        - name: Check Point 與 Intune 整合
+                          href: checkpoint-sandblast-mobile-mtd-connector-integration.md
+                    - name: 設定 Lookout
+                      href: lookout-mobile-threat-defense-connector.md
+                      items:
+                        - name: Lookout 與 Intune 整合
+                          href: lookout-mtd-connector-integration.md
+                    - name: 設定 Pradeo
+                      href: pradeo-mobile-threat-defense-connector.md
+                      items:
+                        - name: Pradeo 與 Intune 整合
+                          href: pradeo-mtd-connector-integration.md
                     - name: 設定 Sophos Mobile
                       href: sophos-mtd-connector.md
                       items:
                         - name: 更好的行動環境與 Intune 整合
                           href: sophos-mtd-connector-integration.md
-            - name: Windows Defender ATP
-              href: advanced-threat-protection.md
-            - name: 安全性基準
-              href: security-baselines.md
+                    - name: 設定 Symantec
+                      href: skycure-mobile-threat-defense-connector.md
+                      items:
+                        - name: Symantec 與 Intune 整合
+                          href: skycure-mtd-connector-integration.md
+                    - name: 設定 Wandera
+                      href: wandera-mtd-connector.md
+                      items:
+                        - name: Wandera 與 Intune 整合
+                          href: wandera-mtd-connector-integration.md
+                    - name: 設定 Zimperium
+                      href: zimperium-mobile-threat-defense-connector.md
+                      items:
+                        - name: Zimperium 與 Intune 整合
+                          href: zimperium-mtd-connector-integration.md
+            - name: Microsoft Defender
               items:
+                - name: Microsoft Defender ATP
+                  href: advanced-threat-protection.md
+                - name: 安全性工作
+                  href: atp-manage-vulnerabilities.md
+            - name: 安全性基準
+              items:
+                - name: 安全性基準
+                  href: security-baselines.md
                 - name: 監視您的基準
                   href: security-baselines-monitor.md
             - name: Endpoint Protection
@@ -468,8 +491,8 @@
               href: certificates-s-mime-encryption-sign.md
             - name: 透過 SCEP 使用第三方憑證授權單位
               href: certificate-authority-add-scep-overview.md
-            - name: Symantec PKI Manager Web 服務
-              href: certificates-symantec-configure.md
+            - name: 使用 DigiCert PKI
+              href: certificates-digicert-configure.md
             - name: 移除 SCEP 或 PKCS 憑證
               href: remove-certificates.md
         - name: eSIM 行動數據設定檔
@@ -552,6 +575,8 @@
               href: app-configuration-policies-use-ios.md
             - name: Android 受管理裝置
               href: app-configuration-policies-use-android.md
+            - name: 設定受控主畫面
+              href: app-configuration-managed-home-screen-app.md
             - name: 受管理的應用程式
               href: app-configuration-policies-managed-app.md
             - name: 使用 iOS 應用程式佈建設定檔
@@ -565,10 +590,12 @@
                   href: windows-store-for-business.md
                 - name: iOS 電子書
                   href: vpp-ebooks-ios.md
-            - name: 設定公司入口網站應用程式
+            - name: 設定公司入口網站
               href: company-portal-app.md
             - name: 設定 Managed Browser
               href: app-configuration-managed-browser.md
+            - name: 設定 Microsoft Edge
+              href: manage-microsoft-edge.md
             - name: 設定 Outlook
               href: app-configuration-policies-outlook.md
         - name: 保護應用程式
@@ -645,14 +672,10 @@
               href: review-logs-using-azure-monitor.md
             - name: 檢閱應用程式保護記錄
               href: app-protection-policy-settings-log.md
-            - name: 電子郵件設定檔疑難排解
-              href: troubleshoot-email-profiles-in-microsoft-intune.md
-            - name: 軟體更新疑難排解
-              href: troubleshoot-software-updates-in-microsoft-intune.md
-            - name: Endpoint Protection 疑難排解
-              href: troubleshoot-endpoint-protection-in-microsoft-intune.md
             - name: 針對原則及設定檔進行疑難排解
               href: troubleshoot-policies-in-microsoft-intune.md
+            - name: 電子郵件設定檔問題和解決方式
+              href: troubleshoot-email-profiles-in-microsoft-intune.md
             - name: 條件式存取的疑難排解
               href: troubleshoot-conditional-access.md
             - name: Exchange Connector 疑難排解
@@ -734,6 +757,8 @@
                   href: vpn-settings-macos.md
                 - name: Wi-Fi
                   href: wi-fi-settings-macos.md
+                - name: 延伸模組
+                  href: kernel-extensions-settings-macos.md
                 - name: 自訂
                   href: custom-settings-macos.md
         - name: Windows 10 及更新版本
@@ -768,8 +793,12 @@
                   href: shared-user-device-settings-windows.md
                 - name: 自訂
                   href: custom-settings-windows-10.md
-            - name: 安全性基準設定
-              href: security-baseline-settings-windows.md
+            - name: 安全性基準
+              items:
+                - name: Windows 10 基準設定
+                  href: security-baseline-settings-mdm.md
+                - name: Microsoft Defender ATP 基準設定
+                  href: security-baseline-settings-defender-atp.md
             - name: Windows 更新設定
               href: windows-update-settings.md
         - name: Windows Holographic for Business
@@ -814,6 +843,10 @@
                   href: vpn-settings-windows-phone-8-1.md
                 - name: 自訂
                   href: custom-settings-windows-phone-8-1.md
+    - name: 錯誤碼與描述
+      items:
+        - name: 軟體更新錯誤
+          href: software-update-agent-error-codes.md
     - name: 開發人員指引
       items:
         - name: 新增第三方憑證授權單位的 API
@@ -947,6 +980,14 @@
               href: manage-license-agreements-for-windows-pc-software-in-microsoft-intune.md
             - name: 解決原則衝突
               href: resolve-gpo-and-microsoft-intune-policy-conflicts.md
+            - name: 軟體更新疑難排解
+              href: troubleshoot-software-updates-in-microsoft-intune.md
+            - name: Endpoint Protection 的常見錯誤
+              href: troubleshoot-endpoint-protection-in-microsoft-intune.md
+        - name: 安全性基準封存
+          items:
+            - name: 封存的 MDM 安全性基準
+              href: security-baseline-settings-mdm-archive.md
     - name: 案例實作指南
       items:
         - name: 保護 Exchange Online

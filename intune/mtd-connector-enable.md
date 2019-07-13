@@ -6,24 +6,23 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/27/2018
+ms.date: 04/30/2019
 ms.topic: conceptual
-ms.prod: ''
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: dbb6a37e-ba47-4b69-922c-d25e66c279f6
-ms.reviewer: heenamac
+ms.reviewer: davidra
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab9fef5a577783ebbdd512de6d00ab98483e754c
-ms.sourcegitcommit: 143dade9125e7b5173ca2a3a902bcd6f4b14067f
+ms.openlocfilehash: 45bcafad3dc6c2a407e1b7b88e07f4021e8b5a36
+ms.sourcegitcommit: 7315fe72b7e55c5dcffc6d87f185f3c2cded9028
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61513339"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67528301"
 ---
 # <a name="enable-the-mobile-threat-defense-connector-in-intune"></a>在 Intune 中啟用 Mobile Threat Defense 連接器
 
@@ -34,15 +33,11 @@ ms.locfileid: "61513339"
 
 ## <a name="to-enable-the-mtd-connector"></a>啟用 MTD 連接器
 
-1. 移至 [Azure 入口網站](https://portal.azure.com)，並使用您的 Intune 認證登入。 成功登入之後，您會看到 [Azure 儀表板]。
+1. 登入 [Intune](https://go.microsoft.com/fwlink/?linkid=2090973)。
 
-2. 在 [Azure 儀表板] 上，選擇左功能表中的 [所有服務]，然後在文字方塊篩選中鍵入 **Intune**。
+4. 在 [Intune 儀表板]  上，選擇 [裝置合規性]  ，然後選擇 [設定]  區段下的 [Mobile Threat Defense]  。
 
-3. 選擇 [Intune]；隨即會開啟 [Intune 儀表板]。
-
-4. 在 [Intune 儀表板] 上，選擇 [裝置合規性]，然後選擇 [安裝] 區段底下的 [行動裝置威脅防護]。
-
-5. 在 [Mobile Threat Defense] 窗格中，選擇 [新增]。
+5. 在 [Mobile Threat Defense]  窗格中，選擇 [新增]  。
 
 6. 從下拉式清單中選擇 MTD 解決方案作為**要設定的 Mobile Threat Defense 連接器**。
 
@@ -67,7 +62,7 @@ ms.locfileid: "61513339"
 - **合作夥伴無回應前的天數**：Intune 將合作夥伴視為因連線中斷而無回應之前的閒置天數。 針對沒有回應的 MTD 合作夥伴，Intune 會忽略其合規性狀態。
 
 > [!IMPORTANT] 
-> 您必須新增並指派 MTD 應用程式，再建立裝置相容性和條件式存取原則規則。 這樣做可確保 MTD 應用程式已準備好供使用者進行安裝，安裝後使用者才能存取電子郵件或其他公司資源。
+> 在情況允許時，建議您先新增並指派 MTD 應用程式，再建立裝置合規性和條件式存取原則規則。 這樣做有助於確保 MTD 應用程式已準備好供使用者進行安裝，安裝後使用者才能存取電子郵件或其他公司資源。
 
 > [!TIP]
-> 您可從 [Mobile Threat Defense] 窗格中看見 Intune 與 MTD 合作夥伴之間的 [連線狀態] 與 [上次同步處理] 時間。
+> 您可從 [Mobile Threat Defense] 窗格中看見 Intune 與 MTD 合作夥伴之間的 [連線狀態]  與 [上次同步處理]  時間。
